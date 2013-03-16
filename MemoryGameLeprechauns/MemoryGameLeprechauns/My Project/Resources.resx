@@ -121,9 +121,6 @@
   <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Splashscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Splashscreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ButtonMemoryGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ButtonMemoryGame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -144,5 +141,26 @@
   </data>
   <data name="ButtonMemoryGameMediumSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ButtonMemoryGameMediumSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TheLeprechaunsButton_Easy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TheLeprechaunsButton-Easy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TheLeprechaunsButton_Easy_Clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TheLeprechaunsButton-Easy-Clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TheLeprechaunsButton_Hard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TheLeprechaunsButton-Hard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TheLeprechaunsButton_Hard_Clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TheLeprechaunsButton-Hard-Clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TheLeprechaunsButton_Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TheLeprechaunsButton-Medium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TheLeprechaunsButton_Medium_Clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TheLeprechaunsButton-Medium-Clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Splashscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Splashscreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

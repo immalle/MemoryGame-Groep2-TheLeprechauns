@@ -127,9 +127,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Splashscreen.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Background.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +149,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ButtonMemoryGameMediumSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheLeprechaunsButton-Hard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheLeprechaunsButton-Hard-Clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheLeprechaunsButton-Medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheLeprechaunsButton-Medium-Clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheLeprechaunsButton-Easy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheLeprechaunsButton-Easy-Clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splashscreen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

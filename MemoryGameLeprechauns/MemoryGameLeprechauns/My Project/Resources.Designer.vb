@@ -149,5 +149,65 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TheLeprechaunsButton_Easy() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TheLeprechaunsButton_Easy", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TheLeprechaunsButton_Easy_Clicked() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TheLeprechaunsButton_Easy_Clicked", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TheLeprechaunsButton_Hard() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TheLeprechaunsButton_Hard", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TheLeprechaunsButton_Hard_Clicked() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TheLeprechaunsButton_Hard_Clicked", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TheLeprechaunsButton_Medium() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TheLeprechaunsButton_Medium", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property TheLeprechaunsButton_Medium_Clicked() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TheLeprechaunsButton_Medium_Clicked", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
     End Module
 End Namespace

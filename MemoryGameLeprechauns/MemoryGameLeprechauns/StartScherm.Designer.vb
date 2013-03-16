@@ -22,6 +22,7 @@ Partial Class StartScherm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StartScherm))
         Me.ButtonEasy = New System.Windows.Forms.PictureBox()
         Me.ButtonMedium = New System.Windows.Forms.PictureBox()
         Me.ButtonHard = New System.Windows.Forms.PictureBox()
@@ -39,9 +40,9 @@ Partial Class StartScherm
         'ButtonEasy
         '
         Me.ButtonEasy.BackColor = System.Drawing.Color.Transparent
-        Me.ButtonEasy.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.ButtonMemoryGameEasy
+        Me.ButtonEasy.BackgroundImage = CType(resources.GetObject("ButtonEasy.BackgroundImage"), System.Drawing.Image)
         Me.ButtonEasy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonEasy.Location = New System.Drawing.Point(471, 30)
+        Me.ButtonEasy.Location = New System.Drawing.Point(474, 30)
         Me.ButtonEasy.Name = "ButtonEasy"
         Me.ButtonEasy.Size = New System.Drawing.Size(470, 187)
         Me.ButtonEasy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -51,7 +52,7 @@ Partial Class StartScherm
         'ButtonMedium
         '
         Me.ButtonMedium.BackColor = System.Drawing.Color.Transparent
-        Me.ButtonMedium.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.ButtonMemoryGameMedium
+        Me.ButtonMedium.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsButton_Medium
         Me.ButtonMedium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ButtonMedium.Location = New System.Drawing.Point(471, 211)
         Me.ButtonMedium.Name = "ButtonMedium"
@@ -62,7 +63,7 @@ Partial Class StartScherm
         'ButtonHard
         '
         Me.ButtonHard.BackColor = System.Drawing.Color.Transparent
-        Me.ButtonHard.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.ButtonMemoryGameHard
+        Me.ButtonHard.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsButton_Hard
         Me.ButtonHard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ButtonHard.Location = New System.Drawing.Point(471, 391)
         Me.ButtonHard.Name = "ButtonHard"
@@ -73,9 +74,9 @@ Partial Class StartScherm
         'ButtonEasySelected
         '
         Me.ButtonEasySelected.BackColor = System.Drawing.Color.Transparent
-        Me.ButtonEasySelected.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.ButtonMemoryGameEasySelected
+        Me.ButtonEasySelected.BackgroundImage = CType(resources.GetObject("ButtonEasySelected.BackgroundImage"), System.Drawing.Image)
         Me.ButtonEasySelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonEasySelected.Location = New System.Drawing.Point(471, 30)
+        Me.ButtonEasySelected.Location = New System.Drawing.Point(474, 30)
         Me.ButtonEasySelected.Name = "ButtonEasySelected"
         Me.ButtonEasySelected.Size = New System.Drawing.Size(470, 187)
         Me.ButtonEasySelected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -86,7 +87,7 @@ Partial Class StartScherm
         'ButtonMediumSelected
         '
         Me.ButtonMediumSelected.BackColor = System.Drawing.Color.Transparent
-        Me.ButtonMediumSelected.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.ButtonMemoryGameMediumSelected
+        Me.ButtonMediumSelected.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsButton_Medium_Clicked
         Me.ButtonMediumSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ButtonMediumSelected.Location = New System.Drawing.Point(471, 211)
         Me.ButtonMediumSelected.Name = "ButtonMediumSelected"
@@ -98,7 +99,7 @@ Partial Class StartScherm
         'ButtonHardSelected
         '
         Me.ButtonHardSelected.BackColor = System.Drawing.Color.Transparent
-        Me.ButtonHardSelected.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.ButtonMemoryGameHardSelected
+        Me.ButtonHardSelected.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsButton_Hard_Clicked
         Me.ButtonHardSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ButtonHardSelected.Location = New System.Drawing.Point(471, 391)
         Me.ButtonHardSelected.Name = "ButtonHardSelected"
@@ -107,7 +108,7 @@ Partial Class StartScherm
         Me.ButtonHardSelected.TabStop = False
         Me.ButtonHardSelected.Visible = False
         '
-        'MemoryGame
+        'StartScherm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -122,7 +123,7 @@ Partial Class StartScherm
         Me.Controls.Add(Me.ButtonMedium)
         Me.Controls.Add(Me.ButtonEasy)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "MemoryGame"
+        Me.Name = "StartScherm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form2"
         CType(Me.ButtonEasy, System.ComponentModel.ISupportInitialize).EndInit()
