@@ -39,4 +39,19 @@
     Private Sub ButtonHardSelected_MouseClick(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ButtonHardSelected.MouseClick
         'Momenteel nog niets
     End Sub
+
+    Private Sub ButtonExit_MouseEnter(sender As System.Object, e As System.EventArgs) Handles ButtonExit.MouseEnter
+        ButtonExitSelected.Visible = True
+        ButtonExit.Visible = False
+    End Sub
+
+    Private Sub ButtonExitSelected_MouseLeave(sender As System.Object, e As System.EventArgs) Handles ButtonExitSelected.MouseLeave
+        ButtonExit.Visible = True
+        ButtonExitSelected.Visible = False
+
+    End Sub
+    Private Sub ButtonExitSelected_MouseClick(sender As System.Object, e As System.EventArgs) Handles ButtonExitSelected.MouseClick
+        Me.Close()
+
+    End Sub
 End Class
