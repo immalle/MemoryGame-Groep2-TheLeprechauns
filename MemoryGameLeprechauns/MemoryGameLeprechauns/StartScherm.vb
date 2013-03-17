@@ -1,5 +1,11 @@
 ﻿Public Class StartScherm
 
+    Public Structure MoeilijkheidStructure
+        Public Naam As String
+        Public AfbeeldingenBreedte As Integer
+        Public AfbeeldingenHoogte As Integer
+        Public Afbeeldinggrootte As Size
+    End Structure
 
 
     Private Sub ButtonEasy_MouseEnter(sender As Object, e As System.EventArgs) Handles ButtonEasy.MouseEnter
@@ -11,7 +17,11 @@
         ButtonEasySelected.Visible = False
     End Sub
     Private Sub ButtonEasySelected_MouseClick(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ButtonEasySelected.MouseClick
-        'Momenteel nog niets
+        Dim Moeilijkheid As MoeilijkheidStructure
+        Moeilijkheid.Naam = "Easy"
+        Moeilijkheid.AfbeeldingenHoogte = 4
+        Moeilijkheid.AfbeeldingenBreedte = 4
+        Moeilijkheid.Afbeeldinggrootte = New Size(50, 100)
     End Sub
 
 
@@ -25,7 +35,11 @@
         ButtonMediumSelected.Visible = False
     End Sub
     Private Sub ButtonMediumSelected_MouseClick(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ButtonMediumSelected.MouseClick
-        'Momenteel nog niets
+        Dim Moeilijkheid As MoeilijkheidStructure
+        Moeilijkheid.Naam = "Medium"
+        Moeilijkheid.AfbeeldingenHoogte = 8
+        Moeilijkheid.AfbeeldingenBreedte = 8
+        Moeilijkheid.Afbeeldinggrootte = New Size(30, 60)
     End Sub
 
 
@@ -39,7 +53,11 @@
         ButtonHardSelected.Visible = False
     End Sub
     Private Sub ButtonHardSelected_MouseClick(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ButtonHardSelected.MouseClick
-        'Momenteel nog niets
+        Dim Moeilijkheid As MoeilijkheidStructure
+        Moeilijkheid.Naam = "Hard"
+        Moeilijkheid.AfbeeldingenHoogte = 14
+        Moeilijkheid.AfbeeldingenBreedte = 14
+        Moeilijkheid.Afbeeldinggrootte = New Size(25, 50)
     End Sub
 
 
@@ -64,4 +82,6 @@
 
         Me.Close()
     End Sub
+
+
 End Class
