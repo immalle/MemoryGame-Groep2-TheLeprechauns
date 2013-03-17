@@ -46,10 +46,9 @@ Partial Class StartScherm
         Me.ButtonEasy.BackColor = System.Drawing.Color.Transparent
         Me.ButtonEasy.BackgroundImage = CType(resources.GetObject("ButtonEasy.BackgroundImage"), System.Drawing.Image)
         Me.ButtonEasy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonEasy.Location = New System.Drawing.Point(474, 30)
+        Me.ButtonEasy.Location = New System.Drawing.Point(723, 221)
         Me.ButtonEasy.Name = "ButtonEasy"
-        Me.ButtonEasy.Size = New System.Drawing.Size(470, 187)
-        Me.ButtonEasy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.ButtonEasy.Size = New System.Drawing.Size(441, 115)
         Me.ButtonEasy.TabIndex = 0
         Me.ButtonEasy.TabStop = False
         '
@@ -58,9 +57,9 @@ Partial Class StartScherm
         Me.ButtonMedium.BackColor = System.Drawing.Color.Transparent
         Me.ButtonMedium.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsButton_Medium
         Me.ButtonMedium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonMedium.Location = New System.Drawing.Point(471, 211)
+        Me.ButtonMedium.Location = New System.Drawing.Point(720, 329)
         Me.ButtonMedium.Name = "ButtonMedium"
-        Me.ButtonMedium.Size = New System.Drawing.Size(470, 187)
+        Me.ButtonMedium.Size = New System.Drawing.Size(441, 115)
         Me.ButtonMedium.TabIndex = 1
         Me.ButtonMedium.TabStop = False
         '
@@ -69,9 +68,9 @@ Partial Class StartScherm
         Me.ButtonHard.BackColor = System.Drawing.Color.Transparent
         Me.ButtonHard.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsButton_Hard
         Me.ButtonHard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonHard.Location = New System.Drawing.Point(471, 391)
+        Me.ButtonHard.Location = New System.Drawing.Point(720, 447)
         Me.ButtonHard.Name = "ButtonHard"
-        Me.ButtonHard.Size = New System.Drawing.Size(470, 187)
+        Me.ButtonHard.Size = New System.Drawing.Size(441, 115)
         Me.ButtonHard.TabIndex = 2
         Me.ButtonHard.TabStop = False
         '
@@ -80,10 +79,9 @@ Partial Class StartScherm
         Me.ButtonEasySelected.BackColor = System.Drawing.Color.Transparent
         Me.ButtonEasySelected.BackgroundImage = CType(resources.GetObject("ButtonEasySelected.BackgroundImage"), System.Drawing.Image)
         Me.ButtonEasySelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonEasySelected.Location = New System.Drawing.Point(474, 30)
+        Me.ButtonEasySelected.Location = New System.Drawing.Point(723, 221)
         Me.ButtonEasySelected.Name = "ButtonEasySelected"
-        Me.ButtonEasySelected.Size = New System.Drawing.Size(470, 187)
-        Me.ButtonEasySelected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.ButtonEasySelected.Size = New System.Drawing.Size(441, 115)
         Me.ButtonEasySelected.TabIndex = 3
         Me.ButtonEasySelected.TabStop = False
         Me.ButtonEasySelected.Visible = False
@@ -93,9 +91,9 @@ Partial Class StartScherm
         Me.ButtonMediumSelected.BackColor = System.Drawing.Color.Transparent
         Me.ButtonMediumSelected.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsButton_Medium_Clicked
         Me.ButtonMediumSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonMediumSelected.Location = New System.Drawing.Point(471, 211)
+        Me.ButtonMediumSelected.Location = New System.Drawing.Point(720, 329)
         Me.ButtonMediumSelected.Name = "ButtonMediumSelected"
-        Me.ButtonMediumSelected.Size = New System.Drawing.Size(470, 187)
+        Me.ButtonMediumSelected.Size = New System.Drawing.Size(441, 115)
         Me.ButtonMediumSelected.TabIndex = 4
         Me.ButtonMediumSelected.TabStop = False
         Me.ButtonMediumSelected.Visible = False
@@ -105,9 +103,9 @@ Partial Class StartScherm
         Me.ButtonHardSelected.BackColor = System.Drawing.Color.Transparent
         Me.ButtonHardSelected.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsButton_Hard_Clicked
         Me.ButtonHardSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonHardSelected.Location = New System.Drawing.Point(471, 391)
+        Me.ButtonHardSelected.Location = New System.Drawing.Point(720, 447)
         Me.ButtonHardSelected.Name = "ButtonHardSelected"
-        Me.ButtonHardSelected.Size = New System.Drawing.Size(470, 187)
+        Me.ButtonHardSelected.Size = New System.Drawing.Size(441, 115)
         Me.ButtonHardSelected.TabIndex = 5
         Me.ButtonHardSelected.TabStop = False
         Me.ButtonHardSelected.Visible = False
@@ -117,7 +115,7 @@ Partial Class StartScherm
         Me.ButtonExitSelected.BackColor = System.Drawing.Color.Transparent
         Me.ButtonExitSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ButtonExitSelected.Image = CType(resources.GetObject("ButtonExitSelected.Image"), System.Drawing.Image)
-        Me.ButtonExitSelected.Location = New System.Drawing.Point(1271, 686)
+        Me.ButtonExitSelected.Location = New System.Drawing.Point(1271, 650)
         Me.ButtonExitSelected.Name = "ButtonExitSelected"
         Me.ButtonExitSelected.Size = New System.Drawing.Size(111, 112)
         Me.ButtonExitSelected.TabIndex = 6
@@ -129,7 +127,7 @@ Partial Class StartScherm
         Me.ButtonExit.BackColor = System.Drawing.Color.Transparent
         Me.ButtonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ButtonExit.Image = CType(resources.GetObject("ButtonExit.Image"), System.Drawing.Image)
-        Me.ButtonExit.Location = New System.Drawing.Point(1271, 686)
+        Me.ButtonExit.Location = New System.Drawing.Point(1271, 650)
         Me.ButtonExit.Name = "ButtonExit"
         Me.ButtonExit.Size = New System.Drawing.Size(111, 112)
         Me.ButtonExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -141,17 +139,17 @@ Partial Class StartScherm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.Background
+        Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsStartScherm
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1384, 800)
-        Me.Controls.Add(Me.ButtonHardSelected)
-        Me.Controls.Add(Me.ButtonMediumSelected)
-        Me.Controls.Add(Me.ButtonEasySelected)
-        Me.Controls.Add(Me.ButtonHard)
-        Me.Controls.Add(Me.ButtonMedium)
-        Me.Controls.Add(Me.ButtonEasy)
         Me.Controls.Add(Me.ButtonExit)
         Me.Controls.Add(Me.ButtonExitSelected)
+        Me.Controls.Add(Me.ButtonHard)
+        Me.Controls.Add(Me.ButtonMedium)
+        Me.Controls.Add(Me.ButtonMediumSelected)
+        Me.Controls.Add(Me.ButtonHardSelected)
+        Me.Controls.Add(Me.ButtonEasy)
+        Me.Controls.Add(Me.ButtonEasySelected)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StartScherm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -165,7 +163,6 @@ Partial Class StartScherm
         CType(Me.ButtonExitSelected, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ButtonExit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ButtonEasy As System.Windows.Forms.PictureBox
