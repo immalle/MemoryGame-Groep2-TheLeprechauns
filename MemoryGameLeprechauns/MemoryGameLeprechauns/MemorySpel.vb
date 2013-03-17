@@ -1,10 +1,12 @@
 ﻿Public Class MemorySpel
     Private KaartIndex As Integer = 0
-    'Private Xcoordinaat As Integer = 20
-    'Private Ycoordinaat As Integer = 54
-
 
     Private Sub MemorySpel_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        KaartenLeggen()
+    End Sub
+
+
+    Private Sub KaartenLeggen()
         Do While KaartIndex <> StartScherm.Moeilijkheid.AantalKaarten
             Dim Kaart As New PictureBox
 
@@ -27,7 +29,6 @@
 
         Loop
     End Sub
-
 
     Private Sub ButtonExit_MouseEnter(sender As System.Object, e As System.EventArgs) Handles ButtonExit.MouseEnter
         ButtonExitSelected.Visible = True
