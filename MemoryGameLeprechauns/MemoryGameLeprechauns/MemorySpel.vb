@@ -6,7 +6,7 @@
     End Sub
 
 
-    Private Sub KaartenLeggen()
+    Public Sub KaartenLeggen()
         Do While KaartIndex <> StartScherm.Moeilijkheid.AantalKaarten
             Dim Kaart As New PictureBox
 
@@ -74,6 +74,7 @@
 
     Private Sub ButtonMenu_MouseClick(sender As System.Object, e As System.EventArgs) Handles ButtonMenuSelected.MouseClick
         StartScherm.Show()
-        Me.Hide()
+        Me.Close()
+
     End Sub
 End Class
