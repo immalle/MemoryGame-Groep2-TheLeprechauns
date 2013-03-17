@@ -2,12 +2,17 @@
 
     Public Structure MoeilijkheidStructure
         Public Naam As String
-        Public AfbeeldingenBreedte As Integer
-        Public AfbeeldingenHoogte As Integer
+        Public AantalKaarten As Integer
         Public AfbeeldingsgrootteX As Integer
         Public AfbeeldingsgrootteY As Integer
         Public ExtraTussenruimteX As Integer
         Public ExtraTussenRuimteY As Integer
+        Public StartwaardeX As Integer
+        Public startwaardeY As Integer
+        Public Xcoordinaat As Integer
+        Public Ycoordinaat As Integer
+        Public uitersteX As Integer
+        Public uitersteY As Integer
     End Structure
 
     Public Moeilijkheid As MoeilijkheidStructure
@@ -23,12 +28,17 @@
     Private Sub ButtonEasySelected_MouseClick(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ButtonEasySelected.MouseClick
 
         Moeilijkheid.Naam = "Easy"
-        Moeilijkheid.AfbeeldingenHoogte = 4
-        Moeilijkheid.AfbeeldingenBreedte = 4
+        Moeilijkheid.AantalKaarten = 15
         Moeilijkheid.AfbeeldingsgrootteX = 150
-        Moeilijkheid.AfbeeldingsgrootteY = 250
+        Moeilijkheid.AfbeeldingsgrootteY = 200
         Moeilijkheid.ExtraTussenruimteX = 19
         Moeilijkheid.ExtraTussenRuimteY = 10
+        Moeilijkheid.StartwaardeX = 250
+        Moeilijkheid.startwaardeY = 110
+        Moeilijkheid.Xcoordinaat = 250
+        Moeilijkheid.Ycoordinaat = 110
+        Moeilijkheid.uitersteX = 900
+        Moeilijkheid.uitersteY = 640
         MemorySpel.Show()
         MemorySpel.Focus()
         Me.Hide()
@@ -47,10 +57,19 @@
     Private Sub ButtonMediumSelected_MouseClick(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ButtonMediumSelected.MouseClick
 
         Moeilijkheid.Naam = "Medium"
-        Moeilijkheid.AfbeeldingenHoogte = 8
-        Moeilijkheid.AfbeeldingenBreedte = 8
-        Moeilijkheid.AfbeeldingsgrootteX = 30
-        Moeilijkheid.AfbeeldingsgrootteY = 60
+
+        Moeilijkheid.AantalKaarten = 32
+        Moeilijkheid.AfbeeldingsgrootteX = 110
+        Moeilijkheid.AfbeeldingsgrootteY = 160
+        Moeilijkheid.ExtraTussenruimteX = 19
+        Moeilijkheid.ExtraTussenRuimteY = 10
+        Moeilijkheid.StartwaardeX = 150
+        Moeilijkheid.startwaardeY = 80
+        Moeilijkheid.Xcoordinaat = 150
+        Moeilijkheid.Ycoordinaat = 80
+        Moeilijkheid.uitersteX = 1000
+        Moeilijkheid.uitersteY = 640
+
         MemorySpel.Show()
         MemorySpel.Focus()
         Me.Hide()
@@ -70,10 +89,18 @@
     Private Sub ButtonHardSelected_MouseClick(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ButtonHardSelected.MouseClick
 
         Moeilijkheid.Naam = "Hard"
-        Moeilijkheid.AfbeeldingenHoogte = 14
-        Moeilijkheid.AfbeeldingenBreedte = 14
-        Moeilijkheid.AfbeeldingsgrootteX = 25
-        Moeilijkheid.AfbeeldingsgrootteY = 50
+        
+        Moeilijkheid.AantalKaarten = 72
+        Moeilijkheid.AfbeeldingsgrootteX = 75
+        Moeilijkheid.AfbeeldingsgrootteY = 100
+        Moeilijkheid.ExtraTussenruimteX = 19
+        Moeilijkheid.ExtraTussenRuimteY = 10
+        Moeilijkheid.StartwaardeX = 80
+        Moeilijkheid.startwaardeY = 80
+        Moeilijkheid.Xcoordinaat = 80
+        Moeilijkheid.Ycoordinaat = 80
+        Moeilijkheid.uitersteX = 1100
+        Moeilijkheid.uitersteY = 640
         MemorySpel.Show()
         MemorySpel.Focus()
         Me.Hide()

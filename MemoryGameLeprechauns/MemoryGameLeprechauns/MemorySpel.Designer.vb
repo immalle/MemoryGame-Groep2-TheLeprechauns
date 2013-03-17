@@ -57,8 +57,8 @@ Partial Class MemorySpel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.Background
+        Me.BackColor = System.Drawing.Color.Green
+        Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsSpeelveld
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1384, 800)
         Me.Controls.Add(Me.ButtonExit)

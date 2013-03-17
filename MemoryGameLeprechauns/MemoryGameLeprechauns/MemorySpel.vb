@@ -1,25 +1,26 @@
 ﻿Public Class MemorySpel
     Private KaartIndex As Integer = 0
-    Private Xcoordinaat As Integer = 20
-    Private Ycoordinaat As Integer = 54
+    'Private Xcoordinaat As Integer = 20
+    'Private Ycoordinaat As Integer = 54
 
 
     Private Sub MemorySpel_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        Do While KaartIndex <> 16
+        Do While KaartIndex <> StartScherm.Moeilijkheid.AantalKaarten
             Dim Kaart As New PictureBox
+
             With Kaart
-                .Location = New Point(Xcoordinaat, Ycoordinaat)
+                .Location = New Point(StartScherm.Moeilijkheid.Xcoordinaat, StartScherm.Moeilijkheid.Ycoordinaat)
                 .Size = New Size(StartScherm.Moeilijkheid.AfbeeldingsgrootteX, StartScherm.Moeilijkheid.AfbeeldingsgrootteY)
                 .SizeMode = PictureBoxSizeMode.StretchImage
                 .Image = My.Resources.TheLeprechaunsCard
                 .BackColor = Color.Transparent
             End With
-            If Xcoordinaat > 1100 AndAlso Ycoordinaat > 640 Then
+            If StartScherm.Moeilijkheid.Xcoordinaat > StartScherm.Moeilijkheid.uitersteX AndAlso StartScherm.Moeilijkheid.Ycoordinaat > StartScherm.Moeilijkheid.uitersteY Then
                 MsgBox("Test")
-            ElseIf Xcoordinaat < 1100 Then
-                Xcoordinaat += StartScherm.Moeilijkheid.AfbeeldingsgrootteX + 19
-            Else : Ycoordinaat += StartScherm.Moeilijkheid.AfbeeldingsgrootteY + StartScherm.Moeilijkheid.ExtraTussenRuimteY
-                Xcoordinaat = 20
+            ElseIf StartScherm.Moeilijkheid.Xcoordinaat < StartScherm.Moeilijkheid.uitersteX Then
+                StartScherm.Moeilijkheid.Xcoordinaat += StartScherm.Moeilijkheid.AfbeeldingsgrootteX + StartScherm.Moeilijkheid.ExtraTussenruimteX
+            Else : StartScherm.Moeilijkheid.Ycoordinaat += StartScherm.Moeilijkheid.AfbeeldingsgrootteY + StartScherm.Moeilijkheid.ExtraTussenRuimteY
+                StartScherm.Moeilijkheid.Xcoordinaat = StartScherm.Moeilijkheid.StartwaardeX
             End If
             KaartIndex += 1
             Me.Controls.Add(Kaart)
