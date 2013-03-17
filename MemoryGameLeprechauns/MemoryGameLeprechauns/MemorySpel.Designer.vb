@@ -67,7 +67,6 @@ Partial Class MemorySpel
         Me.ButtonMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.ButtonMenu.TabIndex = 10
         Me.ButtonMenu.TabStop = False
-        Me.ButtonMenu.Visible = False
         '
         'ButtonMenuSelected
         '
@@ -79,6 +78,7 @@ Partial Class MemorySpel
         Me.ButtonMenuSelected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.ButtonMenuSelected.TabIndex = 11
         Me.ButtonMenuSelected.TabStop = False
+        Me.ButtonMenuSelected.Visible = False
         '
         'MemorySpel
         '
@@ -88,9 +88,9 @@ Partial Class MemorySpel
         Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsSpeelveld
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1384, 800)
+        Me.Controls.Add(Me.ButtonMenu)
         Me.Controls.Add(Me.ButtonExitSelected)
         Me.Controls.Add(Me.ButtonExit)
-        Me.Controls.Add(Me.ButtonMenu)
         Me.Controls.Add(Me.ButtonMenuSelected)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MemorySpel"
