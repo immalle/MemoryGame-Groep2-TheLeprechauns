@@ -87,10 +87,10 @@ Partial Class MemorySpel
         Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsSpeelveld
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1384, 800)
-        Me.Controls.Add(Me.ButtonMenu)
-        Me.Controls.Add(Me.ButtonExit)
         Me.Controls.Add(Me.ButtonExitSelected)
         Me.Controls.Add(Me.ButtonMenuSelected)
+        Me.Controls.Add(Me.ButtonMenu)
+        Me.Controls.Add(Me.ButtonExit)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MemorySpel"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
