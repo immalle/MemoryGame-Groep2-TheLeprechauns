@@ -115,11 +115,11 @@ Partial Class StartScherm
         'ButtonExitSelected
         '
         Me.ButtonExitSelected.BackColor = System.Drawing.Color.Transparent
+        Me.ButtonExitSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ButtonExitSelected.Image = CType(resources.GetObject("ButtonExitSelected.Image"), System.Drawing.Image)
-        Me.ButtonExitSelected.Location = New System.Drawing.Point(1262, 687)
+        Me.ButtonExitSelected.Location = New System.Drawing.Point(1271, 686)
         Me.ButtonExitSelected.Name = "ButtonExitSelected"
-        Me.ButtonExitSelected.Size = New System.Drawing.Size(119, 113)
-        Me.ButtonExitSelected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.ButtonExitSelected.Size = New System.Drawing.Size(111, 112)
         Me.ButtonExitSelected.TabIndex = 6
         Me.ButtonExitSelected.TabStop = False
         Me.ButtonExitSelected.Visible = False
@@ -127,11 +127,12 @@ Partial Class StartScherm
         'ButtonExit
         '
         Me.ButtonExit.BackColor = System.Drawing.Color.Transparent
-        Me.ButtonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.ButtonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ButtonExit.Image = CType(resources.GetObject("ButtonExit.Image"), System.Drawing.Image)
-        Me.ButtonExit.Location = New System.Drawing.Point(1262, 687)
+        Me.ButtonExit.Location = New System.Drawing.Point(1271, 686)
         Me.ButtonExit.Name = "ButtonExit"
-        Me.ButtonExit.Size = New System.Drawing.Size(119, 113)
+        Me.ButtonExit.Size = New System.Drawing.Size(111, 112)
+        Me.ButtonExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.ButtonExit.TabIndex = 7
         Me.ButtonExit.TabStop = False
         '
@@ -143,14 +144,14 @@ Partial Class StartScherm
         Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1384, 800)
-        Me.Controls.Add(Me.ButtonExit)
-        Me.Controls.Add(Me.ButtonExitSelected)
         Me.Controls.Add(Me.ButtonHardSelected)
         Me.Controls.Add(Me.ButtonMediumSelected)
         Me.Controls.Add(Me.ButtonEasySelected)
         Me.Controls.Add(Me.ButtonHard)
         Me.Controls.Add(Me.ButtonMedium)
         Me.Controls.Add(Me.ButtonEasy)
+        Me.Controls.Add(Me.ButtonExit)
+        Me.Controls.Add(Me.ButtonExitSelected)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StartScherm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -18,4 +18,8 @@
         End If
 
     End Sub
+
+    Private Sub Splashscreenlogo_Click(sender As System.Object, e As System.EventArgs) Handles Splashscreenlogo.Click
+
+    End Sub
 End Class

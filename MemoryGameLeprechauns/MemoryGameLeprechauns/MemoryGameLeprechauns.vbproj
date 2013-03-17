@@ -72,6 +72,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MemorySpel.Designer.vb">
+      <DependentUpon>MemorySpel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MemorySpel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Splashscreen.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MemorySpel.resx">
+      <DependentUpon>MemorySpel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartScherm.resx">
       <DependentUpon>StartScherm.vb</DependentUpon>
     </EmbeddedResource>
@@ -169,13 +178,13 @@
     <None Include="Resources\TheLeprechaunsButton-Easy-Clicked.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Splashscreen.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\TheLeprechaunsButton-Exit.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TheLeprechaunsButton-Exit-Clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splashscreen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

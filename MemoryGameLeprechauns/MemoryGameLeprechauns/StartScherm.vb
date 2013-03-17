@@ -1,5 +1,7 @@
 ﻿Public Class StartScherm
 
+
+
     Private Sub ButtonEasy_MouseEnter(sender As Object, e As System.EventArgs) Handles ButtonEasy.MouseEnter
         ButtonEasySelected.Visible = True
         ButtonEasy.Visible = False
@@ -40,6 +42,8 @@
         'Momenteel nog niets
     End Sub
 
+
+
     Private Sub ButtonExit_MouseEnter(sender As System.Object, e As System.EventArgs) Handles ButtonExit.MouseEnter
         ButtonExitSelected.Visible = True
         ButtonExit.Visible = False
@@ -51,7 +55,13 @@
 
     End Sub
     Private Sub ButtonExitSelected_MouseClick(sender As System.Object, e As System.EventArgs) Handles ButtonExitSelected.MouseClick
-        Me.Close()
+        ' Dit stopt het proces van het spel zonder dit bleef het altijd actief in taskmanager en elke keer dat je het opnieuw opende startte het een nieuw process + je kon het programma niet verwijderen.
+        Dim processList() As Process
+        processList = Process.GetProcessesByName("MemoryGameLeprechauns")
+        For Each proc As Process In processList
+            proc.Kill()
+        Next
 
+        Me.Close()
     End Sub
 End Class

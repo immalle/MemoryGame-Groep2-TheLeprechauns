@@ -23,31 +23,32 @@ Partial Class Splashscreen
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Splashscreenlogo = New System.Windows.Forms.PictureBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Splashscreen))
         Me.Splashscreentimer = New System.Windows.Forms.Timer(Me.components)
+        Me.Splashscreenlogo = New System.Windows.Forms.PictureBox()
         CType(Me.Splashscreenlogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Splashscreenlogo
-        '
-        Me.Splashscreenlogo.BackColor = System.Drawing.Color.Transparent
-        Me.Splashscreenlogo.Image = Global.MemoryGameLeprechauns.My.Resources.Resources.Splashscreen
-        Me.Splashscreenlogo.Location = New System.Drawing.Point(-5, -2)
-        Me.Splashscreenlogo.Name = "Splashscreenlogo"
-        Me.Splashscreenlogo.Size = New System.Drawing.Size(382, 369)
-        Me.Splashscreenlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Splashscreenlogo.TabIndex = 0
-        Me.Splashscreenlogo.TabStop = False
         '
         'Splashscreentimer
         '
         Me.Splashscreentimer.Interval = 500
         '
+        'Splashscreenlogo
+        '
+        Me.Splashscreenlogo.BackColor = System.Drawing.Color.Transparent
+        Me.Splashscreenlogo.Image = CType(resources.GetObject("Splashscreenlogo.Image"), System.Drawing.Image)
+        Me.Splashscreenlogo.Location = New System.Drawing.Point(24, 7)
+        Me.Splashscreenlogo.Name = "Splashscreenlogo"
+        Me.Splashscreenlogo.Size = New System.Drawing.Size(951, 489)
+        Me.Splashscreenlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.Splashscreenlogo.TabIndex = 0
+        Me.Splashscreenlogo.TabStop = False
+        '
         'Splashscreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(389, 369)
+        Me.ClientSize = New System.Drawing.Size(975, 508)
         Me.Controls.Add(Me.Splashscreenlogo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Splashscreen"
