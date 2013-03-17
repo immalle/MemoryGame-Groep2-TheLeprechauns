@@ -57,7 +57,7 @@ Partial Class StartScherm
         Me.ButtonMedium.BackColor = System.Drawing.Color.Transparent
         Me.ButtonMedium.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsButton_Medium
         Me.ButtonMedium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonMedium.Location = New System.Drawing.Point(720, 329)
+        Me.ButtonMedium.Location = New System.Drawing.Point(720, 335)
         Me.ButtonMedium.Name = "ButtonMedium"
         Me.ButtonMedium.Size = New System.Drawing.Size(441, 115)
         Me.ButtonMedium.TabIndex = 1
@@ -91,7 +91,7 @@ Partial Class StartScherm
         Me.ButtonMediumSelected.BackColor = System.Drawing.Color.Transparent
         Me.ButtonMediumSelected.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsButton_Medium_Clicked
         Me.ButtonMediumSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ButtonMediumSelected.Location = New System.Drawing.Point(720, 329)
+        Me.ButtonMediumSelected.Location = New System.Drawing.Point(720, 335)
         Me.ButtonMediumSelected.Name = "ButtonMediumSelected"
         Me.ButtonMediumSelected.Size = New System.Drawing.Size(441, 115)
         Me.ButtonMediumSelected.TabIndex = 4
@@ -145,11 +145,12 @@ Partial Class StartScherm
         Me.Controls.Add(Me.ButtonExit)
         Me.Controls.Add(Me.ButtonExitSelected)
         Me.Controls.Add(Me.ButtonHard)
-        Me.Controls.Add(Me.ButtonMedium)
         Me.Controls.Add(Me.ButtonMediumSelected)
         Me.Controls.Add(Me.ButtonHardSelected)
         Me.Controls.Add(Me.ButtonEasy)
         Me.Controls.Add(Me.ButtonEasySelected)
+        Me.Controls.Add(Me.ButtonMedium)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StartScherm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
