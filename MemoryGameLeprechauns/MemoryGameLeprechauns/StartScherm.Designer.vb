@@ -145,11 +145,11 @@ Partial Class StartScherm
         Me.Controls.Add(Me.ButtonExit)
         Me.Controls.Add(Me.ButtonExitSelected)
         Me.Controls.Add(Me.ButtonHard)
-        Me.Controls.Add(Me.ButtonMediumSelected)
         Me.Controls.Add(Me.ButtonHardSelected)
         Me.Controls.Add(Me.ButtonEasy)
         Me.Controls.Add(Me.ButtonEasySelected)
         Me.Controls.Add(Me.ButtonMedium)
+        Me.Controls.Add(Me.ButtonMediumSelected)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StartScherm"

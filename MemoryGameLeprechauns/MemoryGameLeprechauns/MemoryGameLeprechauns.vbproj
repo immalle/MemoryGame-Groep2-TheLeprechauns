@@ -211,9 +211,6 @@
     <None Include="Resources\TheLeprechaunsButton_Menu_clicked.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\TheLeprechaunsStartScherm.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\TheLeprechaunsButton_Exit_Clicked1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +221,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Leprechaun Song Intro.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheLeprechaunsStartScherm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
