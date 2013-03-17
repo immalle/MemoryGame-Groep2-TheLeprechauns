@@ -4,9 +4,11 @@
         Public Naam As String
         Public AfbeeldingenBreedte As Integer
         Public AfbeeldingenHoogte As Integer
-        Public Afbeeldinggrootte As Size
+        Public AfbeeldingsgrootteX As Integer
+        Public AfbeeldingsgrootteY As Integer
     End Structure
 
+    Public Moeilijkheid As MoeilijkheidStructure
 
     Private Sub ButtonEasy_MouseEnter(sender As Object, e As System.EventArgs) Handles ButtonEasy.MouseEnter
         ButtonEasySelected.Visible = True
@@ -17,11 +19,15 @@
         ButtonEasySelected.Visible = False
     End Sub
     Private Sub ButtonEasySelected_MouseClick(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ButtonEasySelected.MouseClick
-        Dim Moeilijkheid As MoeilijkheidStructure
+
         Moeilijkheid.Naam = "Easy"
         Moeilijkheid.AfbeeldingenHoogte = 4
         Moeilijkheid.AfbeeldingenBreedte = 4
-        Moeilijkheid.Afbeeldinggrootte = New Size(50, 100)
+        Moeilijkheid.AfbeeldingsgrootteX = 150
+        Moeilijkheid.AfbeeldingsgrootteY = 300
+        MemorySpel.Show()
+        MemorySpel.Focus()
+        Me.Hide()
     End Sub
 
 
@@ -35,11 +41,16 @@
         ButtonMediumSelected.Visible = False
     End Sub
     Private Sub ButtonMediumSelected_MouseClick(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ButtonMediumSelected.MouseClick
-        Dim Moeilijkheid As MoeilijkheidStructure
+
         Moeilijkheid.Naam = "Medium"
         Moeilijkheid.AfbeeldingenHoogte = 8
         Moeilijkheid.AfbeeldingenBreedte = 8
-        Moeilijkheid.Afbeeldinggrootte = New Size(30, 60)
+        Moeilijkheid.AfbeeldingsgrootteX = 30
+        Moeilijkheid.AfbeeldingsgrootteY = 60
+        MemorySpel.Show()
+        MemorySpel.Focus()
+        Me.Hide()
+
     End Sub
 
 
@@ -53,11 +64,16 @@
         ButtonHardSelected.Visible = False
     End Sub
     Private Sub ButtonHardSelected_MouseClick(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ButtonHardSelected.MouseClick
-        Dim Moeilijkheid As MoeilijkheidStructure
+
         Moeilijkheid.Naam = "Hard"
         Moeilijkheid.AfbeeldingenHoogte = 14
         Moeilijkheid.AfbeeldingenBreedte = 14
-        Moeilijkheid.Afbeeldinggrootte = New Size(25, 50)
+        Moeilijkheid.AfbeeldingsgrootteX = 25
+        Moeilijkheid.AfbeeldingsgrootteY = 50
+        MemorySpel.Show()
+        MemorySpel.Focus()
+        Me.Hide()
+
     End Sub
 
 
