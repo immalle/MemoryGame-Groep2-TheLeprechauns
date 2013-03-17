@@ -131,8 +131,5 @@
     End Sub
 
 
-    Private Sub StartScherm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'Moezik
-        My.Computer.Audio.Play(My.Resources.Leprechaun_Song_Loop, AudioPlayMode.BackgroundLoop)
-    End Sub
+
 End Class

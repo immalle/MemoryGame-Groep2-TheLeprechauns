@@ -54,6 +54,7 @@ Partial Class Splashscreen
         Me.Name = "Splashscreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
+        Me.TopMost = True
         CType(Me.Splashscreenlogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

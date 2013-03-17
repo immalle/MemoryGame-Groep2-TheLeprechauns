@@ -5,7 +5,9 @@
     Private Sub Splashscreen_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         BackColor = Color.White
         TransparencyKey = BackColor
-        splashscreentimer.start()
+        Splashscreentimer.Start()
+        BackgroundSong.Show()
+        BackgroundSong.Visible = False
     End Sub
 
     Private Sub Splashscreentimer_Tick(sender As System.Object, e As System.EventArgs) Handles Splashscreentimer.Tick
@@ -21,4 +23,5 @@
     End Sub
 
    
+
 End Class
