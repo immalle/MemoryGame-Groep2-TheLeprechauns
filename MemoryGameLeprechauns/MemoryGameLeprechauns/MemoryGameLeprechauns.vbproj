@@ -210,6 +210,12 @@
   <ItemGroup>
     <None Include="Resources\TheLeprechaunsButton_Menu_clicked_new1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leprechaun Song Loop.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leprechaun Song Intro.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
