@@ -18,7 +18,7 @@
                 MsgBox("Test")
             ElseIf Xcoordinaat < 1100 Then
                 Xcoordinaat += StartScherm.Moeilijkheid.AfbeeldingsgrootteX + 19
-            Else : Ycoordinaat += StartScherm.Moeilijkheid.AfbeeldingsgrootteY
+            Else : Ycoordinaat += StartScherm.Moeilijkheid.AfbeeldingsgrootteY + StartScherm.Moeilijkheid.ExtraTussenRuimteY
                 Xcoordinaat = 20
             End If
             KaartIndex += 1

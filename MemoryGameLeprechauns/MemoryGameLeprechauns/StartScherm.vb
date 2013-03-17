@@ -6,6 +6,8 @@
         Public AfbeeldingenHoogte As Integer
         Public AfbeeldingsgrootteX As Integer
         Public AfbeeldingsgrootteY As Integer
+        Public ExtraTussenruimteX As Integer
+        Public ExtraTussenRuimteY As Integer
     End Structure
 
     Public Moeilijkheid As MoeilijkheidStructure
@@ -24,7 +26,9 @@
         Moeilijkheid.AfbeeldingenHoogte = 4
         Moeilijkheid.AfbeeldingenBreedte = 4
         Moeilijkheid.AfbeeldingsgrootteX = 150
-        Moeilijkheid.AfbeeldingsgrootteY = 300
+        Moeilijkheid.AfbeeldingsgrootteY = 250
+        Moeilijkheid.ExtraTussenruimteX = 19
+        Moeilijkheid.ExtraTussenRuimteY = 10
         MemorySpel.Show()
         MemorySpel.Focus()
         Me.Hide()
