@@ -24,11 +24,22 @@
             Else : StartScherm.Moeilijkheid.Ycoordinaat += StartScherm.Moeilijkheid.AfbeeldingsgrootteY + StartScherm.Moeilijkheid.ExtraTussenRuimteY
                 StartScherm.Moeilijkheid.Xcoordinaat = StartScherm.Moeilijkheid.StartwaardeX
             End If
+            AddHandler Kaart.MouseEnter, AddressOf LabelOnMouseEnterEventHandler
+            AddHandler Kaart.MouseLeave, AddressOf LabelOnMouseLeaveEventHandler
             KaartIndex += 1
             Me.Controls.Add(Kaart)
 
         Loop
     End Sub
+
+
+    Private Sub LabelOnMouseEnterEventHandler(sender As PictureBox, e As System.EventArgs)
+        sender.Image = My.Resources.TheLeprechaunsCardSelected
+    End Sub
+    Private Sub LabelOnMouseLeaveEventHandler(sender As PictureBox, e As System.EventArgs)
+        sender.Image = My.Resources.TheLeprechaunsCard
+    End Sub
+
 
     Private Sub ButtonExit_MouseEnter(sender As System.Object, e As System.EventArgs) Handles ButtonExit.MouseEnter
         ButtonExitSelected.Visible = True
@@ -49,5 +60,20 @@
         Next
 
         Me.Close()
+    End Sub
+
+    Private Sub ButtonMenu_MouseEnter(sender As System.Object, e As System.EventArgs) Handles ButtonMenu.MouseEnter
+        ButtonMenuSelected.Visible = True
+        ButtonMenu.Visible = False
+    End Sub
+
+    Private Sub ButtonMenu_MouseLeave(sender As System.Object, e As System.EventArgs) Handles ButtonMenuSelected.MouseLeave
+        ButtonMenu.Visible = True
+        ButtonMenuSelected.Visible = False
+    End Sub
+
+    Private Sub ButtonMenu_MouseClick(sender As System.Object, e As System.EventArgs) Handles ButtonMenuSelected.MouseClick
+        StartScherm.Show()
+        Me.Hide()
     End Sub
 End Class
