@@ -33,9 +33,9 @@
         Moeilijkheid.AfbeeldingsgrootteY = 200
         Moeilijkheid.ExtraTussenruimteX = 19
         Moeilijkheid.ExtraTussenRuimteY = 10
-        Moeilijkheid.StartwaardeX = 250
+        Moeilijkheid.StartwaardeX = 200
         Moeilijkheid.startwaardeY = 110
-        Moeilijkheid.Xcoordinaat = 250
+        Moeilijkheid.Xcoordinaat = 200
         Moeilijkheid.Ycoordinaat = 110
         Moeilijkheid.uitersteX = 900
         Moeilijkheid.uitersteY = 640
