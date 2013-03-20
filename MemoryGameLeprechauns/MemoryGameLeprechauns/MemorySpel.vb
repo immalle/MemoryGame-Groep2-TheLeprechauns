@@ -1,44 +1,25 @@
 ﻿Public Class MemorySpel
-    Private KaartIndex As Integer = 0
-    Private afbeeldingenlijst As New List(Of Image)
-    Private Afbeeldingenlijst2 As New List(Of Image)
-    Private PicboxTaglijst As New List(Of Integer)
+
+    Private kaartIndex As Integer = 0
+    Private kaartenTimerIndex As Integer = 0
     Private clickindex As Integer = 0
-    Private x As New Random()
+    Private kaartenGeklikt As Integer = 0
+    Private afbeeldingenlijst As New List(Of Image)
+    Private afbeeldingenlijst2 As New List(Of Image)
     Private kaartenlijst As New List(Of PictureBox)
-    Private KaartenTimerIndex As Integer
-    Private KaartenGeklikt As Integer = 0
-    Private Gekliktekaartenlijst As New List(Of PictureBox)
+    Private gekliktekaartenlijst As New List(Of PictureBox)
+    Private x As New Random()
 
 
     Private Sub MemorySpel_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         KaartenLeggen()
         Importafbeeldingen()
-
-
-        For Each PictureBox In kaartenlijst
-            If clickindex Mod 2 = 0 Then
-                Dim random As Integer = x.Next(1, afbeeldingenlijst.Count)
-                PictureBox.BackgroundImage = afbeeldingenlijst(random)
-                PictureBox.Image = My.Resources.TheLeprechaunsCard
-                afbeeldingenlijst.RemoveAt(random)
-                clickindex += 1
-
-            Else : Dim random As Integer = x.Next(1, Afbeeldingenlijst2.Count)
-                PictureBox.BackgroundImage = Afbeeldingenlijst2(random)
-                PictureBox.Image = My.Resources.TheLeprechaunsCard
-                Afbeeldingenlijst2.RemoveAt(random)
-                clickindex += 1
-
-            End If
-        Next
-
-
+        ToewijzenAfbeeldingen()
     End Sub
 
-
     Public Sub KaartenLeggen()
-        Do While KaartIndex <> StartScherm.Moeilijkheid.AantalKaarten
+        Do While kaartIndex <> StartScherm.Moeilijkheid.AantalKaarten
+
             Dim Kaart As New PictureBox
 
             With Kaart
@@ -48,7 +29,7 @@
                 .BackgroundImage = My.Resources.TheLeprechaunsCard
                 .BackgroundImageLayout = ImageLayout.Stretch
                 .BackColor = Color.Transparent
-                
+
             End With
             If StartScherm.Moeilijkheid.Xcoordinaat > StartScherm.Moeilijkheid.uitersteX AndAlso StartScherm.Moeilijkheid.Ycoordinaat > StartScherm.Moeilijkheid.uitersteY Then
                 MsgBox("Test")
@@ -57,14 +38,13 @@
             Else : StartScherm.Moeilijkheid.Ycoordinaat += StartScherm.Moeilijkheid.AfbeeldingsgrootteY + StartScherm.Moeilijkheid.ExtraTussenRuimteY
                 StartScherm.Moeilijkheid.Xcoordinaat = StartScherm.Moeilijkheid.StartwaardeX
             End If
-            AddHandler Kaart.MouseEnter, AddressOf LabelOnMouseEnterEventHandler
-            AddHandler Kaart.MouseLeave, AddressOf LabelOnMouseLeaveEventHandler
-            AddHandler Kaart.MouseClick, AddressOf LabelOnMouseClickEventHandler
-            KaartIndex += 1
-            Kaart.Tag = 0
-            kaartenlijst.Add(Kaart)
-            PicboxTaglijst.Add(Kaart.Tag)
 
+            AddHandler Kaart.MouseEnter, AddressOf KaartOnMouseEnterEventHandler
+            AddHandler Kaart.MouseLeave, AddressOf KaartOnMouseLeaveEventHandler
+            AddHandler Kaart.MouseClick, AddressOf KaartOnMouseClickEventHandler
+
+            kaartIndex += 1
+            kaartenlijst.Add(Kaart)
             Me.Controls.Add(Kaart)
 
         Loop
@@ -76,68 +56,57 @@
             afbeeldingenlijst(i).Tag = i
         Next
         For i = 0 To StartScherm.Moeilijkheid.AantalKaarten / 2
-            Afbeeldingenlijst2.Add(Image.FromFile("C:\Users\Yves\Documents\GitHub\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
-            Afbeeldingenlijst2(i).Tag = i
+            afbeeldingenlijst2.Add(Image.FromFile("C:\Users\Yves\Documents\GitHub\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
+            afbeeldingenlijst2(i).Tag = i
         Next
     End Sub
 
+    Private Sub ToewijzenAfbeeldingen()
+        For Each PictureBox In kaartenlijst
+            If clickindex Mod 2 = 0 Then
+                Dim random As Integer = x.Next(1, afbeeldingenlijst.Count)
+                PictureBox.BackgroundImage = afbeeldingenlijst(random)
+                PictureBox.Image = My.Resources.TheLeprechaunsCard
+                afbeeldingenlijst.RemoveAt(random)
+                clickindex += 1
 
-    Private Sub LabelOnMouseClickEventHandler(sender As PictureBox, e As System.EventArgs)
-        If KaartenGeklikt < 2 Then
-            KaartenGeklikt += 1
-            Gekliktekaartenlijst.Add(sender)
+            Else : Dim random As Integer = x.Next(1, afbeeldingenlijst2.Count)
+                PictureBox.BackgroundImage = afbeeldingenlijst2(random)
+                PictureBox.Image = My.Resources.TheLeprechaunsCard
+                afbeeldingenlijst2.RemoveAt(random)
+                clickindex += 1
+            End If
+        Next
+    End Sub
+
+    'Alle EventHandlers:
+
+    Private Sub KaartOnMouseClickEventHandler(sender As PictureBox, e As System.EventArgs)
+        If kaartenGeklikt < 2 Then
+            kaartenGeklikt += 1
+            gekliktekaartenlijst.Add(sender)
             sender.Image = sender.BackgroundImage
             sender.BackgroundImage = My.Resources.TheLeprechaunsCard
-            If KaartenGeklikt = 2 Then
+            If kaartenGeklikt = 2 Then
                 KaartenTimer.Start()
             End If
         End If
-
-
-
-
-        'If KaartenGeklikt < 2 Then
-        '    KaartenTimer.Start()
-        '    KaartenGeklikt += 1
-        '    sender.Image = sender.BackgroundImage
-        '    sender.BackgroundImage = My.Resources.TheLeprechaunsCard
-        'End If
-
-
-
-
     End Sub
-
-
-    Private Sub LabelOnMouseEnterEventHandler(sender As PictureBox, e As System.EventArgs)
-
+    Private Sub KaartOnMouseEnterEventHandler(sender As PictureBox, e As System.EventArgs)
+        'Voorlopig nog niets
     End Sub
-    Private Sub LabelOnMouseLeaveEventHandler(sender As PictureBox, e As System.EventArgs)
-
+    Private Sub KaartOnMouseLeaveEventHandler(sender As PictureBox, e As System.EventArgs)
+        'Voorlopig nog niets
     End Sub
-
-
     Private Sub ButtonExit_MouseEnter(sender As System.Object, e As System.EventArgs) Handles ButtonExit.MouseEnter
         ButtonExitSelected.Visible = True
         ButtonExit.Visible = False
     End Sub
-
     Private Sub ButtonExitSelected_MouseLeave(sender As System.Object, e As System.EventArgs) Handles ButtonExitSelected.MouseLeave
         ButtonExit.Visible = True
         ButtonExitSelected.Visible = False
 
     End Sub
-    Private Sub ButtonExitSelected_MouseClick(sender As System.Object, e As System.EventArgs) Handles ButtonExitSelected.MouseClick
-        ' Dit stopt het proces van het spel zonder dit bleef het altijd actief in taskmanager en elke keer dat je het opnieuw opende startte het een nieuw process + je kon het programma niet verwijderen.
-        Dim processList() As Process
-        processList = Process.GetProcessesByName("MemoryGameLeprechauns")
-        For Each proc As Process In processList
-            proc.Kill()
-        Next
-
-        Me.Close()
-    End Sub
-
     Private Sub ButtonMenu_MouseEnter(sender As System.Object, e As System.EventArgs) Handles ButtonMenu.MouseEnter
         ButtonMenuSelected.Visible = True
         ButtonMenu.Visible = False
@@ -147,42 +116,34 @@
         ButtonMenu.Visible = True
         ButtonMenuSelected.Visible = False
     End Sub
-
     Private Sub ButtonMenu_MouseClick(sender As System.Object, e As System.EventArgs) Handles ButtonMenuSelected.MouseClick
         StartScherm.Show()
         Me.Close()
 
     End Sub
-
     Private Sub KaartenTimer_Tick(sender As System.Object, e As System.EventArgs) Handles KaartenTimer.Tick
-        KaartenTimerIndex += 1
-        If Gekliktekaartenlijst(0).Image.Tag = Gekliktekaartenlijst(1).Image.Tag Then
-            Me.Controls.Remove(Gekliktekaartenlijst(1))
-            Me.Controls.Remove(Gekliktekaartenlijst(0))
+        kaartenTimerIndex += 1
+        If gekliktekaartenlijst(0).Image.Tag = gekliktekaartenlijst(1).Image.Tag Then
+            Me.Controls.Remove(gekliktekaartenlijst(1))
+            Me.Controls.Remove(gekliktekaartenlijst(0))
         End If
-        If KaartenTimerIndex = 3 Then
-            For Each PictureBox In Gekliktekaartenlijst
+        If kaartenTimerIndex = 3 Then
+            For Each PictureBox In gekliktekaartenlijst
                 PictureBox.BackgroundImage = PictureBox.Image
                 PictureBox.Image = My.Resources.TheLeprechaunsCard
 
             Next
-            KaartenGeklikt = 0
-            Gekliktekaartenlijst.RemoveAt(1)
-            Gekliktekaartenlijst.RemoveAt(0)
+            kaartenGeklikt = 0
+            gekliktekaartenlijst.RemoveAt(1)
+            gekliktekaartenlijst.RemoveAt(0)
             KaartenTimer.Stop()
-            KaartenTimerIndex = 0
+            kaartenTimerIndex = 0
         End If
-
-
-
-
-
-
-        'If KaartenGeklikt = 2 Then
-        '    KaartenTimerIndex += 1
-        '    If KaartenGeklikt = 3 Then
-        '        KaartenGeklikt = 0
-        '    End If
-        'End If
+    End Sub
+    Private Sub ButtonExitSelected_MouseClick(sender As System.Object, e As System.EventArgs) Handles ButtonExitSelected.MouseClick
+        Me.Close()
+        BackgroundSong.Close()
+        StartScherm.Close()
+        Splashscreen.Close()
     End Sub
 End Class
