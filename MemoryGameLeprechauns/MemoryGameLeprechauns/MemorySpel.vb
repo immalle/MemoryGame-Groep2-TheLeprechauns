@@ -51,10 +51,10 @@
     End Sub
 
     Sub Importafbeeldingen()
-        For i = 1 To StartScherm.Moeilijkheid.AantalKaarten / 2 + 1
+        For i = 0 To StartScherm.Moeilijkheid.AantalKaarten / 2
             afbeeldingenlijst.Add(Image.FromFile("C:\Users\Yves\Documents\GitHub\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
         Next
-        For i = 1 To StartScherm.Moeilijkheid.AantalKaarten / 2 + 1
+        For i = 0 To StartScherm.Moeilijkheid.AantalKaarten / 2
             Afbeeldingenlijst2.Add(Image.FromFile("C:\Users\Yves\Documents\GitHub\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
         Next
     End Sub
