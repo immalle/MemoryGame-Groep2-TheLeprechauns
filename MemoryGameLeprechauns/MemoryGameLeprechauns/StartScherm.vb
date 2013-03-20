@@ -28,7 +28,7 @@
     Private Sub ButtonEasySelected_MouseClick(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ButtonEasySelected.MouseClick
 
         Moeilijkheid.Naam = "Easy"
-        Moeilijkheid.AantalKaarten = 15
+        Moeilijkheid.AantalKaarten = 14
         Moeilijkheid.AfbeeldingsgrootteX = 150
         Moeilijkheid.AfbeeldingsgrootteY = 200
         Moeilijkheid.ExtraTussenruimteX = 19

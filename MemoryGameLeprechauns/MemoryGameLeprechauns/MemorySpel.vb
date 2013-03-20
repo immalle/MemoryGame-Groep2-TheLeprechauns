@@ -4,16 +4,37 @@
     Private Afbeeldingenlijst2 As New List(Of Image)
     Private PicboxTaglijst As New List(Of Integer)
     Private clickindex As Integer = 0
-    Private x As New Random
+    Private x As New Random()
     Private randommax As Integer = 8
     Private randommax2 As Integer = 8
     Private tagindex1 As Integer = 100
     Private tagindex2 As Integer = 200
+    Private kaartenlijst As New List(Of PictureBox)
 
 
     Private Sub MemorySpel_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         KaartenLeggen()
         Importafbeeldingen()
+
+
+        For Each PictureBox In kaartenlijst
+            If clickindex Mod 2 = 0 Then
+                Dim random As Integer = x.Next(1, afbeeldingenlijst.Count)
+                PictureBox.BackgroundImage = afbeeldingenlijst(random)
+                PictureBox.Image = My.Resources.TheLeprechaunsCard
+                afbeeldingenlijst.RemoveAt(random)
+                clickindex += 1
+
+            Else : Dim random As Integer = x.Next(1, Afbeeldingenlijst2.Count)
+                PictureBox.BackgroundImage = Afbeeldingenlijst2(random)
+                PictureBox.Image = My.Resources.TheLeprechaunsCard
+                Afbeeldingenlijst2.RemoveAt(random)
+                clickindex += 1
+
+            End If
+        Next
+
+
     End Sub
 
 
@@ -42,7 +63,7 @@
             AddHandler Kaart.MouseClick, AddressOf LabelOnMouseClickEventHandler
             KaartIndex += 1
             Kaart.Tag = 0
-
+            kaartenlijst.Add(Kaart)
             PicboxTaglijst.Add(Kaart.Tag)
 
             Me.Controls.Add(Kaart)
@@ -52,50 +73,32 @@
 
     Sub Importafbeeldingen()
         For i = 0 To StartScherm.Moeilijkheid.AantalKaarten / 2
-            afbeeldingenlijst.Add(Image.FromFile("C:\Users\Yves\Documents\GitHub\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
+            afbeeldingenlijst.Add(Image.FromFile("D:\5I\Yves_Bos\SoftOntwikkeling\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
         Next
         For i = 0 To StartScherm.Moeilijkheid.AantalKaarten / 2
-            Afbeeldingenlijst2.Add(Image.FromFile("C:\Users\Yves\Documents\GitHub\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
+            Afbeeldingenlijst2.Add(Image.FromFile("D:\5I\Yves_Bos\SoftOntwikkeling\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
+
         Next
     End Sub
 
 
     Private Sub LabelOnMouseClickEventHandler(sender As PictureBox, e As System.EventArgs)
-        clickindex += 1
-
-
-        If sender.Tag = 0 Then
-
-            If clickindex Mod 2 = 0 Then
-                Dim random As Integer = x.Next(1, afbeeldingenlijst.Count)
-                sender.Image = afbeeldingenlijst(random)
-                afbeeldingenlijst.RemoveAt(random)
-
-                sender.Tag = tagindex1
-                tagindex1 += 1
-
-
-
-            Else
-               
-
-
-                Dim random2 As Integer = x.Next(1, Afbeeldingenlijst2.Count)
-                    sender.Image = Afbeeldingenlijst2(random2)
-                    Afbeeldingenlijst2.RemoveAt(random2)
-
-                    sender.Tag = tagindex2
-                    tagindex2 += 1
-                End If
 
 
 
 
-        Else : sender.Image = sender.BackgroundImage
 
 
 
-        End If
+
+
+
+
+
+
+
+
+     
 
     End Sub
 
@@ -104,8 +107,8 @@
 
     End Sub
     Private Sub LabelOnMouseLeaveEventHandler(sender As PictureBox, e As System.EventArgs)
-        sender.BackgroundImage = sender.Image
-        sender.Image = My.Resources.TheLeprechaunsCard
+        'sender.BackgroundImage = sender.Image
+        'sender.Image = My.Resources.TheLeprechaunsCard
     End Sub
 
 
@@ -145,4 +148,5 @@
         Me.Close()
 
     End Sub
+
 End Class
