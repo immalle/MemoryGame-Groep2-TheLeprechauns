@@ -22,11 +22,13 @@ Partial Class MemorySpel
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MemorySpel))
         Me.ButtonExit = New System.Windows.Forms.PictureBox()
         Me.ButtonExitSelected = New System.Windows.Forms.PictureBox()
         Me.ButtonMenu = New System.Windows.Forms.PictureBox()
         Me.ButtonMenuSelected = New System.Windows.Forms.PictureBox()
+        Me.KaartenTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.ButtonExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonExitSelected, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonMenu, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,6 +82,10 @@ Partial Class MemorySpel
         Me.ButtonMenuSelected.TabStop = False
         Me.ButtonMenuSelected.Visible = False
         '
+        'KaartenTimer
+        '
+        Me.KaartenTimer.Interval = 1000
+        '
         'MemorySpel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -107,4 +113,5 @@ Partial Class MemorySpel
     Friend WithEvents ButtonExitSelected As System.Windows.Forms.PictureBox
     Friend WithEvents ButtonMenu As System.Windows.Forms.PictureBox
     Friend WithEvents ButtonMenuSelected As System.Windows.Forms.PictureBox
+    Friend WithEvents KaartenTimer As System.Windows.Forms.Timer
 End Class

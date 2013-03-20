@@ -5,11 +5,9 @@
     Private PicboxTaglijst As New List(Of Integer)
     Private clickindex As Integer = 0
     Private x As New Random()
-    Private randommax As Integer = 8
-    Private randommax2 As Integer = 8
-    Private tagindex1 As Integer = 100
-    Private tagindex2 As Integer = 200
     Private kaartenlijst As New List(Of PictureBox)
+    Private KaartenTimerIndex As Integer
+    Private KaartenGeklikt As Integer = 0
 
 
     Private Sub MemorySpel_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
@@ -83,22 +81,15 @@
 
 
     Private Sub LabelOnMouseClickEventHandler(sender As PictureBox, e As System.EventArgs)
+        If KaartenGeklikt < 2 Then
+            KaartenTimer.Start()
+            KaartenGeklikt += 1
+            sender.Image = sender.BackgroundImage
+            sender.BackgroundImage = My.Resources.TheLeprechaunsCard
+        End If
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-     
 
     End Sub
 
@@ -107,8 +98,7 @@
 
     End Sub
     Private Sub LabelOnMouseLeaveEventHandler(sender As PictureBox, e As System.EventArgs)
-        'sender.BackgroundImage = sender.Image
-        'sender.Image = My.Resources.TheLeprechaunsCard
+
     End Sub
 
 
@@ -149,4 +139,12 @@
 
     End Sub
 
+    Private Sub KaartenTimer_Tick(sender As System.Object, e As System.EventArgs) Handles KaartenTimer.Tick
+        If KaartenGeklikt = 2 Then
+            KaartenTimerIndex += 1
+            If KaartenGeklikt = 3 Then
+                KaartenGeklikt = 0
+            End If
+        End If
+    End Sub
 End Class
