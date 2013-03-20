@@ -84,7 +84,7 @@ Partial Class MemorySpel
         '
         'KaartenTimer
         '
-        Me.KaartenTimer.Interval = 1000
+        Me.KaartenTimer.Interval = 300
         '
         'MemorySpel
         '

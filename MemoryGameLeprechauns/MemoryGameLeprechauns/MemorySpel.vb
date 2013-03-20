@@ -8,6 +8,7 @@
     Private kaartenlijst As New List(Of PictureBox)
     Private KaartenTimerIndex As Integer
     Private KaartenGeklikt As Integer = 0
+    Private Gekliktekaartenlijst As New List(Of PictureBox)
 
 
     Private Sub MemorySpel_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
@@ -71,22 +72,36 @@
 
     Sub Importafbeeldingen()
         For i = 0 To StartScherm.Moeilijkheid.AantalKaarten / 2
-            afbeeldingenlijst.Add(Image.FromFile("D:\5I\Yves_Bos\SoftOntwikkeling\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
+            afbeeldingenlijst.Add(Image.FromFile("C:\Users\Yves\Documents\GitHub\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
+            afbeeldingenlijst(i).Tag = i
         Next
         For i = 0 To StartScherm.Moeilijkheid.AantalKaarten / 2
-            Afbeeldingenlijst2.Add(Image.FromFile("D:\5I\Yves_Bos\SoftOntwikkeling\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
-
+            Afbeeldingenlijst2.Add(Image.FromFile("C:\Users\Yves\Documents\GitHub\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
+            Afbeeldingenlijst2(i).Tag = i
         Next
     End Sub
 
 
     Private Sub LabelOnMouseClickEventHandler(sender As PictureBox, e As System.EventArgs)
         If KaartenGeklikt < 2 Then
-            KaartenTimer.Start()
             KaartenGeklikt += 1
+            Gekliktekaartenlijst.Add(sender)
             sender.Image = sender.BackgroundImage
             sender.BackgroundImage = My.Resources.TheLeprechaunsCard
+            If KaartenGeklikt = 2 Then
+                KaartenTimer.Start()
+            End If
         End If
+
+
+
+
+        'If KaartenGeklikt < 2 Then
+        '    KaartenTimer.Start()
+        '    KaartenGeklikt += 1
+        '    sender.Image = sender.BackgroundImage
+        '    sender.BackgroundImage = My.Resources.TheLeprechaunsCard
+        'End If
 
 
 
@@ -140,11 +155,34 @@
     End Sub
 
     Private Sub KaartenTimer_Tick(sender As System.Object, e As System.EventArgs) Handles KaartenTimer.Tick
-        If KaartenGeklikt = 2 Then
-            KaartenTimerIndex += 1
-            If KaartenGeklikt = 3 Then
-                KaartenGeklikt = 0
-            End If
+        KaartenTimerIndex += 1
+        If Gekliktekaartenlijst(0).Image.Tag = Gekliktekaartenlijst(1).Image.Tag Then
+            Me.Controls.Remove(Gekliktekaartenlijst(1))
+            Me.Controls.Remove(Gekliktekaartenlijst(0))
         End If
+        If KaartenTimerIndex = 3 Then
+            For Each PictureBox In Gekliktekaartenlijst
+                PictureBox.BackgroundImage = PictureBox.Image
+                PictureBox.Image = My.Resources.TheLeprechaunsCard
+
+            Next
+            KaartenGeklikt = 0
+            Gekliktekaartenlijst.RemoveAt(1)
+            Gekliktekaartenlijst.RemoveAt(0)
+            KaartenTimer.Stop()
+            KaartenTimerIndex = 0
+        End If
+
+
+
+
+
+
+        'If KaartenGeklikt = 2 Then
+        '    KaartenTimerIndex += 1
+        '    If KaartenGeklikt = 3 Then
+        '        KaartenGeklikt = 0
+        '    End If
+        'End If
     End Sub
 End Class
