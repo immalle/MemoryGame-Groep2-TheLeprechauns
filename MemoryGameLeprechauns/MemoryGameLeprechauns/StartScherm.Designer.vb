@@ -31,6 +31,7 @@ Partial Class StartScherm
         Me.ButtonHardSelected = New System.Windows.Forms.PictureBox()
         Me.ButtonExitSelected = New System.Windows.Forms.PictureBox()
         Me.ButtonExit = New System.Windows.Forms.PictureBox()
+        Me.AfbeeldingenPad = New System.Windows.Forms.TextBox()
         CType(Me.ButtonEasy, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonMedium, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonHard, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -134,6 +135,13 @@ Partial Class StartScherm
         Me.ButtonExit.TabIndex = 7
         Me.ButtonExit.TabStop = False
         '
+        'AfbeeldingenPad
+        '
+        Me.AfbeeldingenPad.Location = New System.Drawing.Point(855, 2)
+        Me.AfbeeldingenPad.Name = "AfbeeldingenPad"
+        Me.AfbeeldingenPad.Size = New System.Drawing.Size(527, 20)
+        Me.AfbeeldingenPad.TabIndex = 8
+        '
         'StartScherm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -142,6 +150,7 @@ Partial Class StartScherm
         Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsStartScherm
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1384, 800)
+        Me.Controls.Add(Me.AfbeeldingenPad)
         Me.Controls.Add(Me.ButtonExit)
         Me.Controls.Add(Me.ButtonExitSelected)
         Me.Controls.Add(Me.ButtonHard)
@@ -164,6 +173,7 @@ Partial Class StartScherm
         CType(Me.ButtonExitSelected, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ButtonExit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ButtonEasy As System.Windows.Forms.PictureBox
@@ -174,4 +184,5 @@ Partial Class StartScherm
     Friend WithEvents ButtonHardSelected As System.Windows.Forms.PictureBox
     Friend WithEvents ButtonExitSelected As System.Windows.Forms.PictureBox
     Friend WithEvents ButtonExit As System.Windows.Forms.PictureBox
+    Friend WithEvents AfbeeldingenPad As System.Windows.Forms.TextBox
 End Class

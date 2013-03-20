@@ -29,6 +29,11 @@ Partial Class MemorySpel
         Me.ButtonMenu = New System.Windows.Forms.PictureBox()
         Me.ButtonMenuSelected = New System.Windows.Forms.PictureBox()
         Me.KaartenTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerTijd = New System.Windows.Forms.Timer(Me.components)
+        Me.TijdLabel = New System.Windows.Forms.Label()
+        Me.ScoreLabel = New System.Windows.Forms.Label()
+        Me.FoutenLabel = New System.Windows.Forms.Label()
+        Me.MoeilijkheidsLabel = New System.Windows.Forms.Label()
         CType(Me.ButtonExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonExitSelected, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonMenu, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,6 +91,53 @@ Partial Class MemorySpel
         '
         Me.KaartenTimer.Interval = 300
         '
+        'TimerTijd
+        '
+        Me.TimerTijd.Interval = 10
+        '
+        'TijdLabel
+        '
+        Me.TijdLabel.BackColor = System.Drawing.Color.Transparent
+        Me.TijdLabel.Font = New System.Drawing.Font("Verdana", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TijdLabel.ForeColor = System.Drawing.Color.Gainsboro
+        Me.TijdLabel.Location = New System.Drawing.Point(368, 7)
+        Me.TijdLabel.Name = "TijdLabel"
+        Me.TijdLabel.Size = New System.Drawing.Size(100, 35)
+        Me.TijdLabel.TabIndex = 12
+        Me.TijdLabel.Text = "00: 00"
+        '
+        'ScoreLabel
+        '
+        Me.ScoreLabel.BackColor = System.Drawing.Color.Transparent
+        Me.ScoreLabel.Font = New System.Drawing.Font("Verdana", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ScoreLabel.ForeColor = System.Drawing.Color.Gainsboro
+        Me.ScoreLabel.Location = New System.Drawing.Point(80, 7)
+        Me.ScoreLabel.Name = "ScoreLabel"
+        Me.ScoreLabel.Size = New System.Drawing.Size(100, 35)
+        Me.ScoreLabel.TabIndex = 13
+        Me.ScoreLabel.Text = "0"
+        '
+        'FoutenLabel
+        '
+        Me.FoutenLabel.BackColor = System.Drawing.Color.Transparent
+        Me.FoutenLabel.Font = New System.Drawing.Font("Verdana", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FoutenLabel.ForeColor = System.Drawing.Color.Gainsboro
+        Me.FoutenLabel.Location = New System.Drawing.Point(687, 7)
+        Me.FoutenLabel.Name = "FoutenLabel"
+        Me.FoutenLabel.Size = New System.Drawing.Size(100, 35)
+        Me.FoutenLabel.TabIndex = 14
+        Me.FoutenLabel.Text = "0"
+        '
+        'MoeilijkheidsLabel
+        '
+        Me.MoeilijkheidsLabel.BackColor = System.Drawing.Color.Transparent
+        Me.MoeilijkheidsLabel.Font = New System.Drawing.Font("Verdana", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MoeilijkheidsLabel.ForeColor = System.Drawing.Color.Gainsboro
+        Me.MoeilijkheidsLabel.Location = New System.Drawing.Point(1024, 7)
+        Me.MoeilijkheidsLabel.Name = "MoeilijkheidsLabel"
+        Me.MoeilijkheidsLabel.Size = New System.Drawing.Size(165, 35)
+        Me.MoeilijkheidsLabel.TabIndex = 15
+        '
         'MemorySpel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -94,6 +146,10 @@ Partial Class MemorySpel
         Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsSpeelveld
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1384, 800)
+        Me.Controls.Add(Me.MoeilijkheidsLabel)
+        Me.Controls.Add(Me.FoutenLabel)
+        Me.Controls.Add(Me.ScoreLabel)
+        Me.Controls.Add(Me.TijdLabel)
         Me.Controls.Add(Me.ButtonMenu)
         Me.Controls.Add(Me.ButtonExit)
         Me.Controls.Add(Me.ButtonMenuSelected)
@@ -114,4 +170,9 @@ Partial Class MemorySpel
     Friend WithEvents ButtonMenu As System.Windows.Forms.PictureBox
     Friend WithEvents ButtonMenuSelected As System.Windows.Forms.PictureBox
     Friend WithEvents KaartenTimer As System.Windows.Forms.Timer
+    Friend WithEvents TimerTijd As System.Windows.Forms.Timer
+    Friend WithEvents TijdLabel As System.Windows.Forms.Label
+    Friend WithEvents ScoreLabel As System.Windows.Forms.Label
+    Friend WithEvents FoutenLabel As System.Windows.Forms.Label
+    Friend WithEvents MoeilijkheidsLabel As System.Windows.Forms.Label
 End Class

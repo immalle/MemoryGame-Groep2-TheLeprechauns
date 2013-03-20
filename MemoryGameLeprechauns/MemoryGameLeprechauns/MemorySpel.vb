@@ -4,6 +4,9 @@
     Private kaartenTimerIndex As Integer = 0
     Private clickindex As Integer = 0
     Private kaartenGeklikt As Integer = 0
+    Private tijdindex As Double
+    Private scoreindex As Integer = 10
+    Private foutindex As Integer = 1
     Private afbeeldingenlijst As New List(Of Image)
     Private afbeeldingenlijst2 As New List(Of Image)
     Private kaartenlijst As New List(Of PictureBox)
@@ -15,6 +18,8 @@
         KaartenLeggen()
         Importafbeeldingen()
         ToewijzenAfbeeldingen()
+        TimerTijd.Start()
+        MoeilijkheidsLabel.Text = StartScherm.Moeilijkheid.Naam
     End Sub
 
     Public Sub KaartenLeggen()
@@ -31,9 +36,8 @@
                 .BackColor = Color.Transparent
 
             End With
-            If StartScherm.Moeilijkheid.Xcoordinaat > StartScherm.Moeilijkheid.uitersteX AndAlso StartScherm.Moeilijkheid.Ycoordinaat > StartScherm.Moeilijkheid.uitersteY Then
-                MsgBox("Test")
-            ElseIf StartScherm.Moeilijkheid.Xcoordinaat < StartScherm.Moeilijkheid.uitersteX Then
+
+            If StartScherm.Moeilijkheid.Xcoordinaat < StartScherm.Moeilijkheid.uitersteX Then
                 StartScherm.Moeilijkheid.Xcoordinaat += StartScherm.Moeilijkheid.AfbeeldingsgrootteX + StartScherm.Moeilijkheid.ExtraTussenruimteX
             Else : StartScherm.Moeilijkheid.Ycoordinaat += StartScherm.Moeilijkheid.AfbeeldingsgrootteY + StartScherm.Moeilijkheid.ExtraTussenRuimteY
                 StartScherm.Moeilijkheid.Xcoordinaat = StartScherm.Moeilijkheid.StartwaardeX
@@ -52,11 +56,11 @@
 
     Sub Importafbeeldingen()
         For i = 0 To StartScherm.Moeilijkheid.AantalKaarten / 2
-            afbeeldingenlijst.Add(Image.FromFile("C:\Users\Yves\Documents\GitHub\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
+            afbeeldingenlijst.Add(Image.FromFile(StartScherm.AfbeeldingenPad.Text & "\afb" & i & ".jpg"))
             afbeeldingenlijst(i).Tag = i
         Next
         For i = 0 To StartScherm.Moeilijkheid.AantalKaarten / 2
-            afbeeldingenlijst2.Add(Image.FromFile("C:\Users\Yves\Documents\GitHub\MemoryGame-Groep2-TheLeprechauns\Rescources\Afbeeldingen\afb" & i & ".jpg"))
+            afbeeldingenlijst2.Add(Image.FromFile(StartScherm.AfbeeldingenPad.Text & "\afb" & i & ".jpg"))
             afbeeldingenlijst2(i).Tag = i
         Next
     End Sub
@@ -124,9 +128,18 @@
     Private Sub KaartenTimer_Tick(sender As System.Object, e As System.EventArgs) Handles KaartenTimer.Tick
         kaartenTimerIndex += 1
         If gekliktekaartenlijst(0).Image.Tag = gekliktekaartenlijst(1).Image.Tag Then
+            If scoreindex <> 0 Then
+                ScoreLabel.Text += scoreindex
+                scoreindex = scoreindex - 10
+            End If
             Me.Controls.Remove(gekliktekaartenlijst(1))
             Me.Controls.Remove(gekliktekaartenlijst(0))
+        Else : If foutindex <> 0 Then
+                FoutenLabel.Text += foutindex
+                foutindex = foutindex - 1
+            End If
         End If
+
         If kaartenTimerIndex = 3 Then
             For Each PictureBox In gekliktekaartenlijst
                 PictureBox.BackgroundImage = PictureBox.Image
@@ -138,6 +151,8 @@
             gekliktekaartenlijst.RemoveAt(0)
             KaartenTimer.Stop()
             kaartenTimerIndex = 0
+            scoreindex = 10
+            foutindex = 1
         End If
     End Sub
     Private Sub ButtonExitSelected_MouseClick(sender As System.Object, e As System.EventArgs) Handles ButtonExitSelected.MouseClick
@@ -145,5 +160,10 @@
         BackgroundSong.Close()
         StartScherm.Close()
         Splashscreen.Close()
+    End Sub
+
+    Private Sub TimerTijd_Tick(sender As System.Object, e As System.EventArgs) Handles TimerTijd.Tick
+        tijdindex += 0.01
+        TijdLabel.Text = Math.Round(tijdindex, 2)
     End Sub
 End Class
