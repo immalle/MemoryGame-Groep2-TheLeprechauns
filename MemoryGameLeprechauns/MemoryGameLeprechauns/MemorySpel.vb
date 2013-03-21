@@ -2,11 +2,12 @@
 
     Private kaartIndex As Integer = 0
     Private kaartenTimerIndex As Integer = 0
-    Private clickindex As Integer = 0
+
     Private kaartenGeklikt As Integer = 0
     Private tijdindex As Double
     Private scoreindex As Integer = 10
     Private foutindex As Integer = 1
+    Private kaarttaginex As Integer = 0
     Private afbeeldingenlijst As New List(Of Image)
     Private afbeeldingenlijst2 As New List(Of Image)
     Private kaartenlijst As New List(Of PictureBox)
@@ -48,6 +49,8 @@
             AddHandler Kaart.MouseClick, AddressOf KaartOnMouseClickEventHandler
 
             kaartIndex += 1
+            kaarttaginex += 1
+            Kaart.Tag = kaarttaginex
             kaartenlijst.Add(Kaart)
             Me.Controls.Add(Kaart)
 
@@ -66,6 +69,7 @@
     End Sub
 
     Private Sub ToewijzenAfbeeldingen()
+        Dim clickindex As Integer = 0
         For Each PictureBox In kaartenlijst
             If clickindex Mod 2 = 0 Then
                 Dim random As Integer = x.Next(1, afbeeldingenlijst.Count)
@@ -86,14 +90,31 @@
     'Alle EventHandlers:
 
     Private Sub KaartOnMouseClickEventHandler(sender As PictureBox, e As System.EventArgs)
-        If kaartenGeklikt < 2 Then
-            kaartenGeklikt += 1
-            gekliktekaartenlijst.Add(sender)
-            sender.Image = sender.BackgroundImage
-            sender.BackgroundImage = My.Resources.TheLeprechaunsCard
-            If kaartenGeklikt = 2 Then
-                KaartenTimer.Start()
+        If gekliktekaartenlijst.Count = 0 Then
+            If kaartenGeklikt < 2 Then
+                kaartenGeklikt += 1
+                gekliktekaartenlijst.Add(sender)
+                sender.Image = sender.BackgroundImage
+                sender.BackgroundImage = My.Resources.TheLeprechaunsCard
+                If kaartenGeklikt = 2 Then
+                    KaartenTimer.Start()
+                End If
             End If
+        ElseIf gekliktekaartenlijst.Count > 0 Then
+            If gekliktekaartenlijst(0).Tag = sender.Tag Then
+
+            Else : If kaartenGeklikt < 2 Then
+                    kaartenGeklikt += 1
+                    gekliktekaartenlijst.Add(sender)
+                    sender.Image = sender.BackgroundImage
+                    sender.BackgroundImage = My.Resources.TheLeprechaunsCard
+                    If kaartenGeklikt = 2 Then
+                        KaartenTimer.Start()
+                    End If
+
+
+                End If
+        End If
         End If
     End Sub
     Private Sub KaartOnMouseEnterEventHandler(sender As PictureBox, e As System.EventArgs)
@@ -163,7 +184,7 @@
     End Sub
 
     Private Sub TimerTijd_Tick(sender As System.Object, e As System.EventArgs) Handles TimerTijd.Tick
-        tijdindex += 0.01
+        tijdindex += 0.02
         TijdLabel.Text = Math.Round(tijdindex, 2)
     End Sub
 End Class
