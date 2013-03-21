@@ -1,8 +1,8 @@
 ﻿Public Class MemorySpel
 
-    Private kaartIndex As Integer = 0
-    Private kaartenTimerIndex As Integer = 0
 
+    Private kaartenTimerIndex As Integer = 0
+    Private aantalkaarten As Integer = StartScherm.Moeilijkheid.AantalKaarten - 2
     Private kaartenGeklikt As Integer = 0
     Private tijdindex As Double
     Private scoreindex As Integer = 10
@@ -24,6 +24,8 @@
     End Sub
 
     Public Sub KaartenLeggen()
+
+        Dim kaartIndex As Integer = 0
         Do While kaartIndex <> StartScherm.Moeilijkheid.AantalKaarten
 
             Dim Kaart As New PictureBox
@@ -147,11 +149,25 @@
 
     End Sub
     Private Sub KaartenTimer_Tick(sender As System.Object, e As System.EventArgs) Handles KaartenTimer.Tick
+        If aantalkaarten = 0 Then
+            KaartenTimer.Stop()
+            For Each PictureBox In kaartenlijst
+                Me.Controls.Remove(PictureBox)
+            Next
+            TimerTijd.Stop()
+            MsgBox("You won!")
+
+
+        End If
         kaartenTimerIndex += 1
         If gekliktekaartenlijst(0).Image.Tag = gekliktekaartenlijst(1).Image.Tag Then
+
+
             If scoreindex <> 0 Then
                 ScoreLabel.Text += scoreindex
+                aantalkaarten -= 2
                 scoreindex = scoreindex - 10
+
             End If
             Me.Controls.Remove(gekliktekaartenlijst(1))
             Me.Controls.Remove(gekliktekaartenlijst(0))
@@ -161,7 +177,7 @@
             End If
         End If
 
-        If kaartenTimerIndex = 3 Then
+        If kaartenTimerIndex = 1 Then
             For Each PictureBox In gekliktekaartenlijst
                 PictureBox.BackgroundImage = PictureBox.Image
                 PictureBox.Image = My.Resources.TheLeprechaunsCard
@@ -170,6 +186,7 @@
             kaartenGeklikt = 0
             gekliktekaartenlijst.RemoveAt(1)
             gekliktekaartenlijst.RemoveAt(0)
+
             KaartenTimer.Stop()
             kaartenTimerIndex = 0
             scoreindex = 10
