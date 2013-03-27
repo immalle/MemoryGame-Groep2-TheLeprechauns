@@ -22,6 +22,7 @@ Partial Class StartScherm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StartScherm))
         Me.ButtonEasy = New System.Windows.Forms.PictureBox()
         Me.ButtonMedium = New System.Windows.Forms.PictureBox()
@@ -32,6 +33,13 @@ Partial Class StartScherm
         Me.ButtonExitSelected = New System.Windows.Forms.PictureBox()
         Me.ButtonExit = New System.Windows.Forms.PictureBox()
         Me.AfbeeldingenPad = New System.Windows.Forms.TextBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.HighscoresDataSet = New MemoryGameLeprechauns.HighscoresDataSet()
+        Me.HighscoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HighscoresTableAdapter = New MemoryGameLeprechauns.HighscoresDataSetTableAdapters.HighscoresTableAdapter()
+        Me.UsernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ScoreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.ButtonEasy, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonMedium, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonHard, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -40,6 +48,9 @@ Partial Class StartScherm
         CType(Me.ButtonHardSelected, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonExitSelected, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonExit, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HighscoresDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HighscoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonEasy
@@ -142,6 +153,52 @@ Partial Class StartScherm
         Me.AfbeeldingenPad.Size = New System.Drawing.Size(527, 20)
         Me.AfbeeldingenPad.TabIndex = 8
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UsernameDataGridViewTextBoxColumn, Me.ScoreDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.HighscoresBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(31, 287)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(244, 103)
+        Me.DataGridView1.TabIndex = 9
+        '
+        'HighscoresDataSet
+        '
+        Me.HighscoresDataSet.DataSetName = "HighscoresDataSet"
+        Me.HighscoresDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'HighscoresBindingSource
+        '
+        Me.HighscoresBindingSource.DataMember = "Highscores"
+        Me.HighscoresBindingSource.DataSource = Me.HighscoresDataSet
+        '
+        'HighscoresTableAdapter
+        '
+        Me.HighscoresTableAdapter.ClearBeforeFill = True
+        '
+        'UsernameDataGridViewTextBoxColumn
+        '
+        Me.UsernameDataGridViewTextBoxColumn.DataPropertyName = "Username"
+        Me.UsernameDataGridViewTextBoxColumn.HeaderText = "Username"
+        Me.UsernameDataGridViewTextBoxColumn.Name = "UsernameDataGridViewTextBoxColumn"
+        '
+        'ScoreDataGridViewTextBoxColumn
+        '
+        Me.ScoreDataGridViewTextBoxColumn.DataPropertyName = "Score"
+        Me.ScoreDataGridViewTextBoxColumn.HeaderText = "Score"
+        Me.ScoreDataGridViewTextBoxColumn.Name = "ScoreDataGridViewTextBoxColumn"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(246, 258)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 10
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'StartScherm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -150,6 +207,8 @@ Partial Class StartScherm
         Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsStartScherm
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1384, 800)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.AfbeeldingenPad)
         Me.Controls.Add(Me.ButtonExit)
         Me.Controls.Add(Me.ButtonExitSelected)
@@ -172,6 +231,9 @@ Partial Class StartScherm
         CType(Me.ButtonHardSelected, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ButtonExitSelected, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ButtonExit, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HighscoresDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HighscoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -185,4 +247,11 @@ Partial Class StartScherm
     Friend WithEvents ButtonExitSelected As System.Windows.Forms.PictureBox
     Friend WithEvents ButtonExit As System.Windows.Forms.PictureBox
     Friend WithEvents AfbeeldingenPad As System.Windows.Forms.TextBox
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents HighscoresDataSet As MemoryGameLeprechauns.HighscoresDataSet
+    Friend WithEvents HighscoresBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents HighscoresTableAdapter As MemoryGameLeprechauns.HighscoresDataSetTableAdapters.HighscoresTableAdapter
+    Friend WithEvents UsernameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ScoreDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
