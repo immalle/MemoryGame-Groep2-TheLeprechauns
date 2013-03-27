@@ -132,16 +132,20 @@
 
     End Sub
 
+
+
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+
         Dim table As DataTable
 
         table = HighscoresDataSet.Tables.Item("Highscores")
 
-        table.Rows.Add("Jefke", 1000)
+        table.Rows.Add(TextBoxNaam.Text, MemorySpel.Finalscore)
 
         HighscoresTableAdapter.Update(HighscoresDataSet)
 
+        Panel1.Visible = False
+        TextBoxNaam.Text = ""
 
     End Sub
-
 End Class

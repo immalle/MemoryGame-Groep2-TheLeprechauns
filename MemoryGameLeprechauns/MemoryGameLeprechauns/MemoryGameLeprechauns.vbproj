@@ -265,6 +265,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Highscores.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Winmessage.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">

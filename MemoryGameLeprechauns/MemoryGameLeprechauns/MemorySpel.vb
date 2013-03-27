@@ -1,6 +1,6 @@
 ﻿Public Class MemorySpel
 
-
+    Public Finalscore As Integer = 0
     Private kaartenTimerIndex As Integer = 0
     Private aantalkaarten As Integer = StartScherm.Moeilijkheid.AantalKaarten - 2
     Private kaartenGeklikt As Integer = 0
@@ -156,8 +156,10 @@
             Next
             TimerTijd.Stop()
             MsgBox("You won!")
-
-
+            Finalscore = ScoreLabel.Text - ((TijdLabel.Text / 10) * FoutenLabel.Text)
+            StartScherm.Show()
+            StartScherm.Focus()
+            StartScherm.Panel1.Visible = True
         End If
         kaartenTimerIndex += 1
         If gekliktekaartenlijst(0).Image.Tag = gekliktekaartenlijst(1).Image.Tag Then
