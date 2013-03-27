@@ -78,6 +78,18 @@
     <Compile Include="BackgroundSong.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="HighScores.Designer.vb">
+      <DependentUpon>HighScores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HighScores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOL.Designer.vb">
+      <DependentUpon>LOL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LOL.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MemorySpel.Designer.vb">
       <DependentUpon>MemorySpel.vb</DependentUpon>
     </Compile>
@@ -116,6 +128,12 @@
   <ItemGroup>
     <EmbeddedResource Include="BackgroundSong.resx">
       <DependentUpon>BackgroundSong.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HighScores.resx">
+      <DependentUpon>HighScores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOL.resx">
+      <DependentUpon>LOL.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemorySpel.resx">
       <DependentUpon>MemorySpel.vb</DependentUpon>
@@ -224,6 +242,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TheLeprechaunsStartScherm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stino.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dr. Dre -- Still D.R.E. faster.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

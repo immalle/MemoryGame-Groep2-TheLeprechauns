@@ -146,6 +146,7 @@
     Private Sub ButtonMenu_MouseClick(sender As System.Object, e As System.EventArgs) Handles ButtonMenuSelected.MouseClick
         StartScherm.Show()
         Me.Close()
+        HighScores.Show()
 
     End Sub
     Private Sub KaartenTimer_Tick(sender As System.Object, e As System.EventArgs) Handles KaartenTimer.Tick
@@ -198,10 +199,17 @@
         BackgroundSong.Close()
         StartScherm.Close()
         Splashscreen.Close()
+        LOL.Close()
     End Sub
 
     Private Sub TimerTijd_Tick(sender As System.Object, e As System.EventArgs) Handles TimerTijd.Tick
         tijdindex += 0.02
         TijdLabel.Text = Math.Round(tijdindex, 2)
+    End Sub
+
+    Private Sub LOLlbl_Click(sender As System.Object, e As System.EventArgs) Handles LOLlbl.Click
+        LOL.Show()
+        LOL.Focus()
+        BackgroundSong.Close()
     End Sub
 End Class

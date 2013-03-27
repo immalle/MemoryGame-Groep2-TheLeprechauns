@@ -34,6 +34,7 @@ Partial Class MemorySpel
         Me.ScoreLabel = New System.Windows.Forms.Label()
         Me.FoutenLabel = New System.Windows.Forms.Label()
         Me.MoeilijkheidsLabel = New System.Windows.Forms.Label()
+        Me.LOLlbl = New System.Windows.Forms.Label()
         CType(Me.ButtonExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonExitSelected, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonMenu, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,6 +139,18 @@ Partial Class MemorySpel
         Me.MoeilijkheidsLabel.Size = New System.Drawing.Size(165, 35)
         Me.MoeilijkheidsLabel.TabIndex = 15
         '
+        'LOLlbl
+        '
+        Me.LOLlbl.AutoSize = True
+        Me.LOLlbl.BackColor = System.Drawing.Color.Transparent
+        Me.LOLlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LOLlbl.ForeColor = System.Drawing.Color.White
+        Me.LOLlbl.Location = New System.Drawing.Point(0, 780)
+        Me.LOLlbl.Name = "LOLlbl"
+        Me.LOLlbl.Size = New System.Drawing.Size(16, 18)
+        Me.LOLlbl.TabIndex = 16
+        Me.LOLlbl.Text = "?"
+        '
         'MemorySpel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -146,6 +159,7 @@ Partial Class MemorySpel
         Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsSpeelveld
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1384, 800)
+        Me.Controls.Add(Me.LOLlbl)
         Me.Controls.Add(Me.MoeilijkheidsLabel)
         Me.Controls.Add(Me.FoutenLabel)
         Me.Controls.Add(Me.ScoreLabel)
@@ -163,6 +177,7 @@ Partial Class MemorySpel
         CType(Me.ButtonMenu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ButtonMenuSelected, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ButtonExit As System.Windows.Forms.PictureBox
@@ -175,4 +190,5 @@ Partial Class MemorySpel
     Friend WithEvents ScoreLabel As System.Windows.Forms.Label
     Friend WithEvents FoutenLabel As System.Windows.Forms.Label
     Friend WithEvents MoeilijkheidsLabel As System.Windows.Forms.Label
+    Friend WithEvents LOLlbl As System.Windows.Forms.Label
 End Class
