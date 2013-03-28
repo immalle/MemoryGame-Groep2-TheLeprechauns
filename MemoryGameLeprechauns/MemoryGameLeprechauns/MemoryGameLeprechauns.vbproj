@@ -267,9 +267,6 @@
     <None Include="Resources\TheLeprechaunsStartScherm.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Stino.PNG" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Dr. Dre -- Still D.R.E. faster.wav" />
   </ItemGroup>
   <ItemGroup>
