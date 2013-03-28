@@ -61,11 +61,11 @@
 
     Sub Importafbeeldingen()
         For i = 0 To StartScherm.Moeilijkheid.AantalKaarten / 2
-            afbeeldingenlijst.Add(Image.FromFile(StartScherm.AfbeeldingenPad.Text & "\afb" & i & ".jpg"))
+            afbeeldingenlijst.Add(Image.FromFile(StartScherm.AfbeeldingenPad.Text & "\afb" & i & ".png"))
             afbeeldingenlijst(i).Tag = i
         Next
         For i = 0 To StartScherm.Moeilijkheid.AantalKaarten / 2
-            afbeeldingenlijst2.Add(Image.FromFile(StartScherm.AfbeeldingenPad.Text & "\afb" & i & ".jpg"))
+            afbeeldingenlijst2.Add(Image.FromFile(StartScherm.AfbeeldingenPad.Text & "\afb" & i & ".png"))
             afbeeldingenlijst2(i).Tag = i
         Next
     End Sub
