@@ -22,6 +22,7 @@ Partial Class StartScherm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StartScherm))
         Me.ButtonEasy = New System.Windows.Forms.PictureBox()
         Me.ButtonMedium = New System.Windows.Forms.PictureBox()
@@ -32,6 +33,14 @@ Partial Class StartScherm
         Me.ButtonExitSelected = New System.Windows.Forms.PictureBox()
         Me.ButtonExit = New System.Windows.Forms.PictureBox()
         Me.AfbeeldingenPad = New System.Windows.Forms.TextBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Username = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Score = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HighscoresDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HighscoresDataSet = New MemoryGameLeprechauns.HighscoresDataSet()
+        Me.WinmessagePanel = New System.Windows.Forms.Panel()
+        Me.FinalScorelbl = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.ButtonEasy, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonMedium, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonHard, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -40,6 +49,10 @@ Partial Class StartScherm
         CType(Me.ButtonHardSelected, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonExitSelected, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonExit, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HighscoresDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HighscoresDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.WinmessagePanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'ButtonEasy
@@ -142,6 +155,70 @@ Partial Class StartScherm
         Me.AfbeeldingenPad.Size = New System.Drawing.Size(527, 20)
         Me.AfbeeldingenPad.TabIndex = 8
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Username, Me.Score})
+        Me.DataGridView1.DataSource = Me.HighscoresDataSetBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 300)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView1.TabIndex = 9
+        '
+        'Username
+        '
+        Me.Username.HeaderText = "Username"
+        Me.Username.Name = "Username"
+        Me.Username.ReadOnly = True
+        '
+        'Score
+        '
+        Me.Score.HeaderText = "Score"
+        Me.Score.Name = "Score"
+        Me.Score.ReadOnly = True
+        '
+        'HighscoresDataSetBindingSource
+        '
+        Me.HighscoresDataSetBindingSource.DataSource = Me.HighscoresDataSet
+        Me.HighscoresDataSetBindingSource.Position = 0
+        '
+        'HighscoresDataSet
+        '
+        Me.HighscoresDataSet.DataSetName = "HighscoresDataSet"
+        Me.HighscoresDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'WinmessagePanel
+        '
+        Me.WinmessagePanel.BackColor = System.Drawing.Color.Transparent
+        Me.WinmessagePanel.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsWonVenster
+        Me.WinmessagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.WinmessagePanel.Controls.Add(Me.TextBox1)
+        Me.WinmessagePanel.Controls.Add(Me.FinalScorelbl)
+        Me.WinmessagePanel.Location = New System.Drawing.Point(316, 115)
+        Me.WinmessagePanel.Name = "WinmessagePanel"
+        Me.WinmessagePanel.Size = New System.Drawing.Size(622, 313)
+        Me.WinmessagePanel.TabIndex = 10
+        '
+        'FinalScorelbl
+        '
+        Me.FinalScorelbl.AutoSize = True
+        Me.FinalScorelbl.Location = New System.Drawing.Point(243, 84)
+        Me.FinalScorelbl.Name = "FinalScorelbl"
+        Me.FinalScorelbl.Size = New System.Drawing.Size(0, 13)
+        Me.FinalScorelbl.TabIndex = 0
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.DarkGreen
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Location = New System.Drawing.Point(133, 278)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(280, 13)
+        Me.TextBox1.TabIndex = 1
+        '
         'StartScherm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -150,6 +227,8 @@ Partial Class StartScherm
         Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsStartScherm
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1384, 800)
+        Me.Controls.Add(Me.WinmessagePanel)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.AfbeeldingenPad)
         Me.Controls.Add(Me.ButtonExit)
         Me.Controls.Add(Me.ButtonExitSelected)
@@ -172,6 +251,11 @@ Partial Class StartScherm
         CType(Me.ButtonHardSelected, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ButtonExitSelected, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ButtonExit, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HighscoresDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HighscoresDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.WinmessagePanel.ResumeLayout(False)
+        Me.WinmessagePanel.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -185,4 +269,12 @@ Partial Class StartScherm
     Friend WithEvents ButtonExitSelected As System.Windows.Forms.PictureBox
     Friend WithEvents ButtonExit As System.Windows.Forms.PictureBox
     Friend WithEvents AfbeeldingenPad As System.Windows.Forms.TextBox
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents Username As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Score As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents HighscoresDataSetBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents HighscoresDataSet As MemoryGameLeprechauns.HighscoresDataSet
+    Friend WithEvents WinmessagePanel As System.Windows.Forms.Panel
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents FinalScorelbl As System.Windows.Forms.Label
 End Class
