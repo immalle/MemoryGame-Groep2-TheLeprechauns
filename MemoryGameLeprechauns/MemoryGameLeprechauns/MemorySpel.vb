@@ -146,7 +146,7 @@
     Private Sub ButtonMenu_MouseClick(sender As System.Object, e As System.EventArgs) Handles ButtonMenuSelected.MouseClick
         StartScherm.Show()
         Me.Close()
-        HighScores.Show()
+
 
     End Sub
     Private Sub KaartenTimer_Tick(sender As System.Object, e As System.EventArgs) Handles KaartenTimer.Tick
