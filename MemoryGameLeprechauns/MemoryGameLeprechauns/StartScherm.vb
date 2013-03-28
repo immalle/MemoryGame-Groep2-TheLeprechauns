@@ -125,4 +125,11 @@
         MemorySpel.Close()
         Splashscreen.Close()
     End Sub
+
+    Private Sub Label1_Click(sender As System.Object, e As System.EventArgs) Handles Label1.Click
+        Dim table As DataTable
+        table = HighscoresDataSet.Tables.Item("Highscores")
+        table.Rows.Add(TextBox1.Text, MemorySpel.ScoreLabel.Text)
+
+    End Sub
 End Class

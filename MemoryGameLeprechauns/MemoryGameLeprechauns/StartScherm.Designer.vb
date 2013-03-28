@@ -41,6 +41,7 @@ Partial Class StartScherm
         Me.WinmessagePanel = New System.Windows.Forms.Panel()
         Me.FinalScorelbl = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.ButtonEasy, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonMedium, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonHard, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -195,6 +196,7 @@ Partial Class StartScherm
         Me.WinmessagePanel.BackColor = System.Drawing.Color.Transparent
         Me.WinmessagePanel.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsWonVenster
         Me.WinmessagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.WinmessagePanel.Controls.Add(Me.Label1)
         Me.WinmessagePanel.Controls.Add(Me.TextBox1)
         Me.WinmessagePanel.Controls.Add(Me.FinalScorelbl)
         Me.WinmessagePanel.Location = New System.Drawing.Point(316, 115)
@@ -218,6 +220,14 @@ Partial Class StartScherm
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(280, 13)
         Me.TextBox1.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.Location = New System.Drawing.Point(440, 278)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(68, 23)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Label1"
         '
         'StartScherm
         '
@@ -277,4 +287,5 @@ Partial Class StartScherm
     Friend WithEvents WinmessagePanel As System.Windows.Forms.Panel
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents FinalScorelbl As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
