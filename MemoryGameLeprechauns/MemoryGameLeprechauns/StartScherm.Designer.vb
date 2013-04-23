@@ -38,10 +38,6 @@ Partial Class StartScherm
         Me.Score = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HighscoresDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HighscoresDataSet = New MemoryGameLeprechauns.HighscoresDataSet()
-        Me.WinmessagePanel = New System.Windows.Forms.Panel()
-        Me.FinalScorelbl = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.ButtonEasy, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonMedium, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonHard, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,7 +49,6 @@ Partial Class StartScherm
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HighscoresDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HighscoresDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.WinmessagePanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'ButtonEasy
@@ -191,44 +186,6 @@ Partial Class StartScherm
         Me.HighscoresDataSet.DataSetName = "HighscoresDataSet"
         Me.HighscoresDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'WinmessagePanel
-        '
-        Me.WinmessagePanel.BackColor = System.Drawing.Color.Transparent
-        Me.WinmessagePanel.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsWonVenster
-        Me.WinmessagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.WinmessagePanel.Controls.Add(Me.Label1)
-        Me.WinmessagePanel.Controls.Add(Me.TextBox1)
-        Me.WinmessagePanel.Controls.Add(Me.FinalScorelbl)
-        Me.WinmessagePanel.Location = New System.Drawing.Point(316, 115)
-        Me.WinmessagePanel.Name = "WinmessagePanel"
-        Me.WinmessagePanel.Size = New System.Drawing.Size(622, 313)
-        Me.WinmessagePanel.TabIndex = 10
-        '
-        'FinalScorelbl
-        '
-        Me.FinalScorelbl.AutoSize = True
-        Me.FinalScorelbl.Location = New System.Drawing.Point(243, 84)
-        Me.FinalScorelbl.Name = "FinalScorelbl"
-        Me.FinalScorelbl.Size = New System.Drawing.Size(0, 13)
-        Me.FinalScorelbl.TabIndex = 0
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.DarkGreen
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Location = New System.Drawing.Point(133, 278)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(280, 13)
-        Me.TextBox1.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.Location = New System.Drawing.Point(440, 278)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 23)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Label1"
-        '
         'StartScherm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -237,7 +194,6 @@ Partial Class StartScherm
         Me.BackgroundImage = Global.MemoryGameLeprechauns.My.Resources.Resources.TheLeprechaunsStartScherm
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1384, 800)
-        Me.Controls.Add(Me.WinmessagePanel)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.AfbeeldingenPad)
         Me.Controls.Add(Me.ButtonExit)
@@ -264,8 +220,6 @@ Partial Class StartScherm
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HighscoresDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HighscoresDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.WinmessagePanel.ResumeLayout(False)
-        Me.WinmessagePanel.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -284,8 +238,4 @@ Partial Class StartScherm
     Friend WithEvents Score As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents HighscoresDataSetBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents HighscoresDataSet As MemoryGameLeprechauns.HighscoresDataSet
-    Friend WithEvents WinmessagePanel As System.Windows.Forms.Panel
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents FinalScorelbl As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
